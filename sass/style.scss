@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "NotoSansKR-Regular";
+  src: url(../font/NotoSansKR-Regular.woff);
+}
+
+$font-main: "NotoSansKR-Regular";
+
+$color-main: black;
+$color-sub: white;
+$color-font-blue: #47a3d2;
+$color-font-yellow: #fbc22b;
+$color-font-green: #8ce33e;
+
+$break-mobile: 320px;
+$break-tablet: 768px;
+$break-pc: 1024px;

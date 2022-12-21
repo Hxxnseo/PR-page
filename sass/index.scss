@@ -1,0 +1,42 @@
+@import "./style.scss";
+@import "./common.scss";
+@import "./mixin.scss";
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-main;
+  color: $color-sub;
+  transition-duration: 0.8s;
+  // overflow: hidden;
+
+  header,
+  main,
+  footer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .sect {
+    // background-color: white;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 95%;
+    height: 90%;
+    margin: auto;
+    padding: 1rem;
+    // background-color: aqua;
+    // border: 1px solid #ccc;
+
+    h1 {
+      font-size: 70px;
+      font-weight: 600;
+    }
+  }
+}
