@@ -1,10 +1,18 @@
 @font-face {
-  font-family: "NotoSansKR-Regular";
-  src: url(../font/NotoSansKR-Regular.woff);
+  font-family: "NotoSansKR-Black";
+  src: url(../font/NotoSansKR-Black.woff);
 }
 @font-face {
-  font-family: "NotoSansKR-Regular";
-  src: url(../font/NotoSansKR-Regular.woff);
+  font-family: "BlackHanSans-Regular";
+  src: url(../font/BlackHanSans-Regular.woff);
+}
+@font-face {
+  font-family: "NotoSansKR-Black";
+  src: url(../font/NotoSansKR-Black.woff);
+}
+@font-face {
+  font-family: "BlackHanSans-Regular";
+  src: url(../font/BlackHanSans-Regular.woff);
 }
 * {
   margin: 0;
@@ -14,7 +22,7 @@
 
 body {
   font-size: 16px;
-  font-family: "NotoSansKR-Regular";
+  font-family: "NotoSansKR-Black";
 }
 
 ul,
@@ -41,6 +49,7 @@ h2 {
 
 h3 {
   color: white;
+  font-family: "BlackHanSans-Regular";
   font-size: 2.25em;
 }
 
@@ -52,35 +61,164 @@ h4 {
 
 p {
   font-size: 1em;
+  line-height: 1.6;
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: black;
   color: white;
   transition-duration: 0.8s;
 }
-body header,
-body main,
-body footer {
+body header {
+  width: 100%;
+}
+body header .header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 1024px) {
+  body header .header {
+    height: 0;
+  }
+}
+body header .header .title-nav {
+  position: fixed;
+  top: 50px;
+  width: 95%;
+}
+body header .header .title-nav h1 {
+  font-size: 0;
+}
+body header .header .title-nav nav {
+  width: 100%;
+}
+body header .header .title-nav nav .gnb {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  background-color: rgba(204, 204, 204, 0.4392156863);
+  line-height: 40px;
+  height: 40px;
+}
+body header .header .title-nav nav .gnb li {
+  width: 25%;
+}
+body header .header .title-nav nav .gnb li a {
+  width: 100%;
+  text-align: center;
+  font-family: "BlackHanSans-Regular";
+}
+body main {
   width: 100%;
   height: 100%;
 }
-body .sect {
+@media screen and (min-width: 1024px) {
+  body main {
+    height: 100vh;
+  }
+}
+body main .sect {
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
-body .container {
+body main .sect .container {
+  position: relative;
   width: 95%;
   height: 90%;
-  margin: auto;
   padding: 1rem;
+  border: 0.1px solid #ccc;
 }
-body .container h1 {
-  font-size: 70px;
-  font-weight: 600;
+body main .sect .container .subTitle {
+  margin-bottom: 160px;
+}
+body main .sect .home {
+  position: relative;
+}
+body main .sect .home .turnColor {
+  display: flex;
+  position: absolute;
+  top: -30px;
+  right: 0;
+  align-items: center;
+}
+body main .sect .home .turnColor .square {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2px solid white;
+  cursor: pointer;
+}
+body main .sect .home .turnColor .square.light {
+  background-color: black;
+}
+body main .sect .home .turnColor .square.dark {
+  background-color: white;
+}
+body main .sect .home .turnColor .para {
+  padding: 0.5rem;
+  font-family: "BlackHanSans-Regular";
+  cursor: pointer;
+}
+body main .sect .home .introduce {
+  white-space: normal;
+}
+body main .sect .home .introduce h4,
+body main .sect .home .introduce p {
+  margin-bottom: 30px;
+}
+body main .sect .home .introduce .big {
+  font-size: 2.5rem;
+}
+body main .sect .about {
+  position: relative;
+}
+body main .sect .about .slide-para {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body main .sect .about .slide-para .para h4,
+body main .sect .about .slide-para .para p {
+  margin-bottom: 30px;
+}
+body main .sect .about .slide-para .para p {
+  font-size: 14px;
+}
+body main .sect .about .slide-para .para .blue {
+  color: #47a3d2;
+}
+body main .sect .about .slide-para .para .yellow {
+  color: #fbc22b;
+}
+body main .sect .about .slide-para .para .green {
+  color: #8ce33e;
+}
+body main .sect .project {
+  position: relative;
+}
+body main .sect .contact {
+  position: relative;
+}
+body main .sect .contact .card-pc {
+  display: none;
+}
+body main .sect .contact .conta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+body main .sect .contact .conta .card-mobile {
+  width: 250px;
+  height: 120px;
+  perspective: 1000px;
+  background-color: #ccc;
 }/*# sourceMappingURL=index.css.map */

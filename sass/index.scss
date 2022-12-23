@@ -2,41 +2,258 @@
 @import "./common.scss";
 @import "./mixin.scss";
 
+// body {
+//   background-color: $color-main;
+//   color: $color-sub;
+//   transition-duration: 0.8s;
+//   // overflow: hidden;
+
+//   header,
+//   main,
+//   footer {
+//     height: 100%;
+//   }
+
+//   header {
+//     height: 0;
+//     .header {
+//       // width: 100%;
+//       position: relative;
+
+//       .title-nav {
+//         position: fixed;
+//         top: calc(5%);
+//         left: calc(2.5% + 1rem);
+//       }
+//     }
+//   }
+
+//   .sect {
+//     // background-color: white;
+//     display: flex;
+//     width: 100%;
+//     height: 100%;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   .container {
+//     position: relative;
+//     width: 95%;
+//     height: 90%;
+//     // margin: auto;
+//     padding: 1rem;
+//     // background-color: aqua;
+//     border: 0.1px solid #ccc;
+
+//     h1 {
+//       font-size: 70px;
+//       font-weight: 600;
+//     }
+//   }
+// }
+
+@include responsive(pc-screens) {
+}
+
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: $color-main;
   color: $color-sub;
   transition-duration: 0.8s;
-  // overflow: hidden;
 
-  header,
-  main,
-  footer {
+  header {
     width: 100%;
-    height: 100%;
+
+    .header {
+      position: relative;
+      z-index: 100;
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include responsive(pc-screens) {
+        height: 0;
+      }
+
+      .title-nav {
+        position: fixed;
+        // flex-direction: column;
+        top: 50px;
+        width: 95%;
+
+        // top: calc(5%);
+        // left: calc(2.5% + 1rem);
+
+        h1 {
+          font-size: 0;
+        }
+
+        nav {
+          width: 100%;
+          .gnb {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            // border: 1px solid #ccc;
+            background-color: #cccccc70;
+            line-height: 40px;
+            height: 40px;
+
+            // transition: all 0.5s linear;
+
+            // &:hover {
+            //   background-color: #cccccc50;
+            // }
+
+            li {
+              width: 25%;
+
+              a {
+                width: 100%;
+                text-align: center;
+                font-family: $font-sub;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
-  .sect {
-    // background-color: white;
-    display: flex;
+  main {
     width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: center;
-  }
+    @include responsive(pc-screens) {
+      height: 100vh;
+    }
 
-  .container {
-    width: 95%;
-    height: 90%;
-    margin: auto;
-    padding: 1rem;
-    // background-color: aqua;
-    // border: 1px solid #ccc;
+    .sect {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
 
-    h1 {
-      font-size: 70px;
-      font-weight: 600;
+      .container {
+        position: relative;
+        width: 95%;
+        height: 90%;
+        // margin: auto;
+        padding: 1rem;
+        // background-color: aqua;
+        border: 0.1px solid #ccc;
+
+        .subTitle {
+          margin-bottom: 160px;
+        }
+      }
+
+      .home {
+        position: relative;
+        .turnColor {
+          display: flex;
+          position: absolute;
+          top: -30px;
+          right: 0;
+          align-items: center;
+
+          .square {
+            width: 0.8rem;
+            height: 0.8rem;
+            border: 2px solid $color-sub;
+            cursor: pointer;
+          }
+
+          .square.light {
+            background-color: $color-main;
+          }
+
+          .square.dark {
+            background-color: $color-sub;
+          }
+
+          .para {
+            padding: 0.5rem;
+            font-family: $font-sub;
+            cursor: pointer;
+          }
+        }
+
+        .introduce {
+          white-space: normal;
+          // width: 70%;
+
+          h4,
+          p {
+            margin-bottom: 30px;
+          }
+
+          .big {
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      .about {
+        position: relative;
+
+        .slide-para {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          .para {
+            h4,
+            p {
+              margin-bottom: 30px;
+            }
+
+            p {
+              font-size: 14px;
+            }
+
+            .blue {
+              color: $color-font-blue;
+            }
+
+            .yellow {
+              color: $color-font-yellow;
+            }
+
+            .green {
+              color: $color-font-green;
+            }
+          }
+        }
+      }
+
+      .project {
+        position: relative;
+      }
+
+      .contact {
+        position: relative;
+
+        .card-pc {
+          display: none;
+        }
+
+        .conta {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 30px;
+          .card-mobile {
+            width: 250px;
+            height: 120px;
+            perspective: 1000px;
+            background-color: #ccc;
+          }
+        }
+      }
     }
   }
 }

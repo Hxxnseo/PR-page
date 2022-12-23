@@ -1,6 +1,10 @@
 @font-face {
-  font-family: "NotoSansKR-Regular";
-  src: url(../font/NotoSansKR-Regular.woff);
+  font-family: "NotoSansKR-Black";
+  src: url(../font/NotoSansKR-Black.woff);
+}
+@font-face {
+  font-family: "BlackHanSans-Regular";
+  src: url(../font/BlackHanSans-Regular.woff);
 }
 * {
   margin: 0;
@@ -10,7 +14,7 @@
 
 body {
   font-size: 16px;
-  font-family: "NotoSansKR-Regular";
+  font-family: "NotoSansKR-Black";
 }
 
 ul,
@@ -37,6 +41,7 @@ h2 {
 
 h3 {
   color: white;
+  font-family: "BlackHanSans-Regular";
   font-size: 2.25em;
 }
 
@@ -48,4 +53,5 @@ h4 {
 
 p {
   font-size: 1em;
+  line-height: 1.6;
 }/*# sourceMappingURL=common.css.map */
