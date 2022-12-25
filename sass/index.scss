@@ -65,11 +65,11 @@ body {
     width: 100%;
 
     .header {
+      display: flex;
       position: relative;
       z-index: 100;
       width: 100%;
       height: 120px;
-      display: flex;
       align-items: center;
       justify-content: center;
 
@@ -95,11 +95,11 @@ body {
           .gnb {
             display: flex;
             width: 100%;
+            height: 40px;
             flex-direction: row;
             // border: 1px solid #ccc;
             background-color: #cccccc70;
             line-height: 40px;
-            height: 40px;
 
             // transition: all 0.5s linear;
 
@@ -185,6 +185,7 @@ body {
         .introduce {
           white-space: normal;
           // width: 70%;
+          text-align: right;
 
           h4,
           p {
@@ -201,8 +202,8 @@ body {
         position: relative;
 
         .slide-para {
-          width: 100%;
           display: flex;
+          width: 100%;
           flex-direction: column;
 
           .para {
@@ -236,6 +237,8 @@ body {
 
       .contact {
         position: relative;
+        height: 600px;
+        // background-color: #ccc;
 
         .card-pc {
           display: none;
@@ -245,12 +248,65 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-bottom: 30px;
-          .card-mobile {
-            width: 250px;
-            height: 120px;
+
+          // margin-bottom: 320px;
+
+          .card {
+            position: relative;
+            width: 300px;
+            height: 150px;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            cursor: pointer;
             perspective: 1000px;
-            background-color: #ccc;
+            background-color: #626262;
+
+            .before-flip,
+            .after-flip {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              backface-visibility: hidden;
+            }
+
+            .before-flip {
+              .touch {
+                h4 {
+                  font-size: 40px;
+                }
+              }
+            }
+
+            .after-flip {
+              transform: rotateY(180deg);
+              padding: 20px;
+
+              .intro {
+                width: 60%;
+
+                p {
+                  font-size: 12px;
+                  color: #ccc;
+                }
+
+                h4 {
+                  font-size: 30px;
+                }
+              }
+
+              .kakao {
+                width: 40%;
+                text-align: center;
+
+                img {
+                  width: 100%;
+                  height: 100px;
+                }
+              }
+            }
           }
         }
       }

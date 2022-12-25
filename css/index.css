@@ -73,11 +73,11 @@ body header {
   width: 100%;
 }
 body header .header {
+  display: flex;
   position: relative;
   z-index: 100;
   width: 100%;
   height: 120px;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -100,10 +100,10 @@ body header .header .title-nav nav {
 body header .header .title-nav nav .gnb {
   display: flex;
   width: 100%;
+  height: 40px;
   flex-direction: row;
   background-color: rgba(204, 204, 204, 0.4392156863);
   line-height: 40px;
-  height: 40px;
 }
 body header .header .title-nav nav .gnb li {
   width: 25%;
@@ -169,6 +169,7 @@ body main .sect .home .turnColor .para {
 }
 body main .sect .home .introduce {
   white-space: normal;
+  text-align: right;
 }
 body main .sect .home .introduce h4,
 body main .sect .home .introduce p {
@@ -181,8 +182,8 @@ body main .sect .about {
   position: relative;
 }
 body main .sect .about .slide-para {
-  width: 100%;
   display: flex;
+  width: 100%;
   flex-direction: column;
 }
 body main .sect .about .slide-para .para h4,
@@ -206,6 +207,7 @@ body main .sect .project {
 }
 body main .sect .contact {
   position: relative;
+  height: 600px;
 }
 body main .sect .contact .card-pc {
   display: none;
@@ -214,11 +216,49 @@ body main .sect .contact .conta {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
 }
-body main .sect .contact .conta .card-mobile {
-  width: 250px;
-  height: 120px;
+body main .sect .contact .conta .card {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
   perspective: 1000px;
-  background-color: #ccc;
+  background-color: #626262;
+}
+body main .sect .contact .conta .card .before-flip,
+body main .sect .contact .conta .card .after-flip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+body main .sect .contact .conta .card .before-flip .touch h4 {
+  font-size: 40px;
+}
+body main .sect .contact .conta .card .after-flip {
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+body main .sect .contact .conta .card .after-flip .intro {
+  width: 60%;
+}
+body main .sect .contact .conta .card .after-flip .intro p {
+  font-size: 12px;
+  color: #ccc;
+}
+body main .sect .contact .conta .card .after-flip .intro h4 {
+  font-size: 30px;
+}
+body main .sect .contact .conta .card .after-flip .kakao {
+  width: 40%;
+  text-align: center;
+}
+body main .sect .contact .conta .card .after-flip .kakao img {
+  width: 100%;
+  height: 100px;
 }/*# sourceMappingURL=index.css.map */
