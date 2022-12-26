@@ -205,6 +205,37 @@ body {
           display: flex;
           width: 100%;
           flex-direction: column;
+          overflow: hidden;
+
+          .slides {
+            // background-color: #626262;
+            display: flex;
+            width: 4000px;
+            height: 500px;
+            order: 2;
+            position: relative;
+            transition: transform 0.5s;
+
+            .slideCont {
+              width: 300px;
+              margin: 2rem;
+              text-align: center;
+
+              h4 {
+                font-size: 30px;
+              }
+
+              img {
+                width: 250px;
+                margin: 20px 0;
+              }
+
+              p {
+                display: block;
+                width: 100%;
+              }
+            }
+          }
 
           .para {
             h4,
@@ -263,10 +294,10 @@ body {
 
             .before-flip,
             .after-flip {
+              display: flex;
+              position: absolute;
               width: 100%;
               height: 100%;
-              position: absolute;
-              display: flex;
               justify-content: center;
               align-items: center;
               backface-visibility: hidden;
@@ -281,8 +312,8 @@ body {
             }
 
             .after-flip {
-              transform: rotateY(180deg);
               padding: 20px;
+              transform: rotateY(180deg);
 
               .intro {
                 width: 60%;
@@ -310,6 +341,20 @@ body {
           }
         }
       }
+    }
+  }
+
+  footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .copyright {
+      width: 95%;
+      padding: 10px 0;
+      font-size: 0.8rem;
+      text-align: right;
     }
   }
 }

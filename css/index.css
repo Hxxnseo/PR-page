@@ -185,6 +185,31 @@ body main .sect .about .slide-para {
   display: flex;
   width: 100%;
   flex-direction: column;
+  overflow: hidden;
+}
+body main .sect .about .slide-para .slides {
+  display: flex;
+  width: 4000px;
+  height: 500px;
+  order: 2;
+  position: relative;
+  transition: transform 0.5s;
+}
+body main .sect .about .slide-para .slides .slideCont {
+  width: 300px;
+  margin: 2rem;
+  text-align: center;
+}
+body main .sect .about .slide-para .slides .slideCont h4 {
+  font-size: 30px;
+}
+body main .sect .about .slide-para .slides .slideCont img {
+  width: 250px;
+  margin: 20px 0;
+}
+body main .sect .about .slide-para .slides .slideCont p {
+  display: block;
+  width: 100%;
 }
 body main .sect .about .slide-para .para h4,
 body main .sect .about .slide-para .para p {
@@ -229,10 +254,10 @@ body main .sect .contact .conta .card {
 }
 body main .sect .contact .conta .card .before-flip,
 body main .sect .contact .conta .card .after-flip {
+  display: flex;
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
-  display: flex;
   justify-content: center;
   align-items: center;
   backface-visibility: hidden;
@@ -241,8 +266,8 @@ body main .sect .contact .conta .card .before-flip .touch h4 {
   font-size: 40px;
 }
 body main .sect .contact .conta .card .after-flip {
-  transform: rotateY(180deg);
   padding: 20px;
+  transform: rotateY(180deg);
 }
 body main .sect .contact .conta .card .after-flip .intro {
   width: 60%;
@@ -261,4 +286,16 @@ body main .sect .contact .conta .card .after-flip .kakao {
 body main .sect .contact .conta .card .after-flip .kakao img {
   width: 100%;
   height: 100px;
+}
+body footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+body footer .copyright {
+  width: 95%;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  text-align: right;
 }/*# sourceMappingURL=index.css.map */
