@@ -141,10 +141,10 @@
               <p>주식에 관심이 생겨 구글링하던 중 <span class="blue">Python</span>으로 주식 데이터를 받아와서 <span class="blue">Pyqt5</span>로 데이터를 한눈에 볼 수 있는 위젯을 만들 수 있는 책을 발견해서 프로그램을 만들었습니다. 이때부터 프로그래밍에 흥미가 생겨 <span class="yellow">C, C++</span>를 공부하며 본격적인 개발을 시작하였습니다. 하지만 <span class="yellow">C, C++</span>는 제가 만든 프로그램처럼 직접 눈에 보이고 바로바로 결과가 나오는 언어가 아니다 보니 다른 분야를 찾아보다가 올해 초 <span class="green">HTML, CSS, JS</span>를 접하며 프론트엔드에 입문했습니다. 내 컴퓨터 속에만 있었던 작업물들을 웹을 통해 전달할 수 있고, 동적이고 웹에 생동감을 불어넣어 주는 <span class="green">JS</span>의 매력에 빠져 프론트엔드 개발자로 진로를 결정하게 되었습니다.</p>
               <h4>저는 이 기술을 다뤄봤습니다.</h4>
               <p>
-                HTML5 - CSS3 - JavaScript - jQuery - React - TypeScript <br />
-                C - C++ - Python - Pyqt5<br />
-                Photoshop - Illustrator<br />
-                Git
+                <span class="skill">HTML5</span> - <span class="skill">CSS3</span> - <span class="skill">JavaScript</span> - <span class="skill">jQuery</span> - <span class="skill">React</span> - <span class="skill">TypeScript</span> <br />
+                <span class="skill">C</span> - <span class="skill">C++</span> - <span class="skill">Python</span> - <span class="skill">Pyqt5</span><br />
+                <span class="skill">Photoshop</span> - <span class="skill">Illustrator</span><br />
+                <span class="skill">Git</span>
               </p>
               <h4>저는 이 곳에서 배웠습니다.</h4>
               <p>
@@ -222,5 +222,66 @@
     <footer>
       <p class="copyright">COPYRIGHT 2022. Hyun All rights reserved.</p>
     </footer>
+
+    <script>
+      const cardPc = document.querySelector(".card-pc");
+      cardPc.addEventListener("click", click);
+
+      function click(e) {
+        let elem = e.currentTarget;
+        if (elem.style.transform == "rotateY(180deg)") {
+          elem.style.transform = "rotateY(0deg)";
+        } else {
+          elem.style.transform = "rotateY(180deg)";
+        }
+      }
+
+      const $wrap = document.querySelector(".slide-para"); //overflow hidden 요소
+      const $moveBox = document.querySelector(".slidewrapper"); // absolute 요소
+      const $slideContain = document.querySelector(".slides"); //각 item을 묶어놓은 요소
+      const $btn = document.querySelectorAll(".skill"); //호버 할 텍스트 요소들
+
+      let ItemLength = $slideContain.children.length;
+      let currentIdx = 1;
+      let $clone = $slideContain.cloneNode(true);
+      let interval;
+      $moveBox.appendChild($clone);
+
+      console.log($btn[9]);
+
+      function slide() {
+        if (currentIdx > ItemLength) {
+          //초기화
+          $moveBox.classList.toggle("transition");
+          currentIdx = 0;
+          setTimeout(() => $moveBox.classList.toggle("transition"), 2100); // transition 시간보다 100 크게
+          return;
+        }
+        $moveBox.style.left = `-${800 * currentIdx}px`;
+        currentIdx++;
+
+        $btn.forEach(e => (e.style.color = ""));
+
+        $btn[currentIdx - 1].style.color = "red";
+      }
+
+      function hoverOnSlide(e, i) {
+        //마우스 호버로 스크롤 이동
+        clearInterval(interval);
+        currentIdx = i;
+        slide();
+        interval = setInterval(slide, 2000);
+
+        //색상 변경
+        $btn.forEach(e => (e.style.color = ""));
+        $btn[i].style.color = "red"; //색상추가
+      }
+
+      $btn.forEach((e, i) => {
+        e.addEventListener("mouseover", e => hoverOnSlide(e, i));
+      });
+
+      interval = setInterval(slide, 4000);
+    </script>
   </body>
 </html>
