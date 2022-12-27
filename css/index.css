@@ -7,12 +7,28 @@
   src: url(../font/BlackHanSans-Regular.woff);
 }
 @font-face {
+  font-family: "Jalnan";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot?#iefix") format("embedded-opentype"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff2") format("woff2"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff") format("woff"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
   font-family: "NotoSansKR-Black";
   src: url(../font/NotoSansKR-Black.woff);
 }
 @font-face {
   font-family: "BlackHanSans-Regular";
   src: url(../font/BlackHanSans-Regular.woff);
+}
+@font-face {
+  font-family: "Jalnan";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot?#iefix") format("embedded-opentype"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff2") format("woff2"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff") format("woff"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.ttf") format("truetype");
+  font-display: swap;
 }
 * {
   margin: 0;
@@ -48,13 +64,11 @@ h2 {
 }
 
 h3 {
-  color: white;
-  font-family: "BlackHanSans-Regular";
-  font-size: 2.25em;
+  font-family: "Jalnan";
+  font-size: 3em;
 }
 
 h4 {
-  color: white;
   font-size: 1.5em;
   font-weight: 600;
 }
@@ -91,27 +105,45 @@ body header .header .title-nav {
   top: 50px;
   width: 95%;
 }
+@media screen and (min-width: 1024px) {
+  body header .header .title-nav {
+    height: 0;
+    top: 25%;
+    left: calc(2.5% + 3rem);
+  }
+}
 body header .header .title-nav h1 {
   font-size: 0;
 }
 body header .header .title-nav nav {
-  width: 100%;
+  position: relative;
 }
 body header .header .title-nav nav .gnb {
   display: flex;
-  width: 100%;
   height: 40px;
   flex-direction: row;
   background-color: rgba(204, 204, 204, 0.4392156863);
   line-height: 40px;
+}
+@media screen and (min-width: 1024px) {
+  body header .header .title-nav nav .gnb {
+    width: 150px;
+    flex-direction: column;
+    background-color: transparent;
+  }
 }
 body header .header .title-nav nav .gnb li {
   width: 25%;
 }
 body header .header .title-nav nav .gnb li a {
   width: 100%;
+  font-family: "Jalnan";
   text-align: center;
-  font-family: "BlackHanSans-Regular";
+}
+@media screen and (min-width: 1024px) {
+  body header .header .title-nav nav .gnb li a {
+    text-align: left;
+  }
 }
 body main {
   width: 100%;
@@ -137,8 +169,18 @@ body main .sect .container {
   padding: 1rem;
   border: 0.1px solid #ccc;
 }
+@media screen and (min-width: 1024px) {
+  body main .sect .container {
+    padding: 3rem;
+  }
+}
 body main .sect .container .subTitle {
   margin-bottom: 160px;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .container .subTitle {
+    margin-bottom: 0;
+  }
 }
 body main .sect .home {
   position: relative;
@@ -146,9 +188,10 @@ body main .sect .home {
 body main .sect .home .turnColor {
   display: flex;
   position: absolute;
-  top: -30px;
+  top: -35px;
   right: 0;
   align-items: center;
+  justify-content: center;
 }
 body main .sect .home .turnColor .square {
   width: 0.8rem;
@@ -164,52 +207,150 @@ body main .sect .home .turnColor .square.dark {
 }
 body main .sect .home .turnColor .para {
   padding: 0.5rem;
-  font-family: "BlackHanSans-Regular";
+  font-family: "Jalnan";
   cursor: pointer;
 }
 body main .sect .home .introduce {
-  white-space: normal;
+  width: 100%;
   text-align: right;
 }
-body main .sect .home .introduce h4,
+@media screen and (min-width: 1024px) {
+  body main .sect .home .introduce {
+    padding: 3rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+body main .sect .home .introduce h4 {
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .home .introduce h4 {
+    font-size: 3rem;
+  }
+}
 body main .sect .home .introduce p {
   margin-bottom: 30px;
 }
+@media screen and (min-width: 1024px) {
+  body main .sect .home .introduce p {
+    font-size: 1.3rem;
+  }
+}
+body main .sect .home .introduce .mobIntro {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  body main .sect .home .introduce .mobIntro {
+    display: none;
+  }
+}
+body main .sect .home .introduce .pcIntro {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  body main .sect .home .introduce .pcIntro {
+    display: block;
+  }
+}
 body main .sect .home .introduce .big {
   font-size: 2.5rem;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .home .introduce .big {
+    font-size: 4rem;
+  }
 }
 body main .sect .about {
   position: relative;
 }
 body main .sect .about .slide-para {
   display: flex;
-  width: 100%;
   flex-direction: column;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
-body main .sect .about .slide-para .slides {
-  display: flex;
-  width: 4000px;
-  height: 500px;
-  order: 2;
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para {
+    flex-direction: row;
+  }
+}
+body main .sect .about .slide-para .slidewrapper {
   position: relative;
-  transition: transform 0.5s;
+  width: 200px;
+  height: 400px;
+  overflow: hidden;
+  order: 2;
+  line-height: 3;
+  margin: 0 auto;
 }
-body main .sect .about .slide-para .slides .slideCont {
-  width: 300px;
-  margin: 2rem;
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .slidewrapper {
+    order: 1;
+    width: 800px;
+    height: 600px;
+  }
+}
+body main .sect .about .slide-para .slidewrapper .slides {
+  display: flex;
+  position: absolute;
+  width: 3000px;
+  height: 100%;
+  transition: all 0.5s;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .slidewrapper .slides {
+    width: 16000px;
+  }
+}
+body main .sect .about .slide-para .slidewrapper .slides .slideCont {
+  width: 200px;
   text-align: center;
 }
-body main .sect .about .slide-para .slides .slideCont h4 {
-  font-size: 30px;
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .slidewrapper .slides .slideCont {
+    width: 800px;
+  }
 }
-body main .sect .about .slide-para .slides .slideCont img {
-  width: 250px;
+body main .sect .about .slide-para .slidewrapper .slides .slideCont h4 {
+  font-size: 24px;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .slidewrapper .slides .slideCont h4 {
+    font-size: 40px;
+  }
+}
+body main .sect .about .slide-para .slidewrapper .slides .slideCont img {
+  width: 200px;
   margin: 20px 0;
 }
-body main .sect .about .slide-para .slides .slideCont p {
-  display: block;
-  width: 100%;
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .slidewrapper .slides .slideCont img {
+    width: 250px;
+    margin: 30px 0;
+  }
+}
+body main .sect .about .slide-para .slidewrapper .slides .slideCont p {
+  font-size: 14px;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .slidewrapper .slides .slideCont p {
+    font-size: 16px;
+    background-color: #626262;
+    width: 400px;
+    margin-left: 200px;
+  }
+}
+body main .sect .about .slide-para .para {
+  order: 1;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .para {
+    width: 40%;
+  }
 }
 body main .sect .about .slide-para .para h4,
 body main .sect .about .slide-para .para p {
@@ -217,6 +358,13 @@ body main .sect .about .slide-para .para p {
 }
 body main .sect .about .slide-para .para p {
   font-size: 14px;
+  line-height: 3;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .para p {
+    font-size: 16px;
+    line-height: 2;
+  }
 }
 body main .sect .about .slide-para .para .blue {
   color: #47a3d2;
@@ -234,15 +382,74 @@ body main .sect .contact {
   position: relative;
   height: 600px;
 }
-body main .sect .contact .card-pc {
-  display: none;
+@media screen and (min-width: 768px) {
+  body main .sect .contact {
+    height: 90%;
+  }
 }
 body main .sect .contact .conta {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body main .sect .contact .conta .card {
+@media screen and (min-width: 768px) {
+  body main .sect .contact .conta {
+    width: 100%;
+    background-color: #626262;
+  }
+}
+body main .sect .contact .card-pc {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  body main .sect .contact .card-pc {
+    display: block;
+    position: relative;
+    width: 800px;
+    height: 400px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    perspective: 1000px;
+    background-color: #626262;
+  }
+}
+body main .sect .contact .card-pc .before-flip,
+body main .sect .contact .card-pc .after-flip {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+body main .sect .contact .card-pc .before-flip h4 {
+  font-size: 60px;
+}
+body main .sect .contact .card-pc .after-flip {
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+body main .sect .contact .card-pc .after-flip .intro {
+  width: 60%;
+}
+body main .sect .contact .card-pc .after-flip .intro p {
+  font-size: 12px;
+  color: #ccc;
+}
+body main .sect .contact .card-pc .after-flip .intro h4 {
+  font-size: 30px;
+}
+body main .sect .contact .card-pc .after-flip .kakao {
+  width: 40%;
+  text-align: center;
+}
+body main .sect .contact .card-pc .after-flip .kakao img {
+  width: 100%;
+  height: 300px;
+}
+body main .sect .contact .card-mobile {
   position: relative;
   width: 300px;
   height: 150px;
@@ -252,8 +459,13 @@ body main .sect .contact .conta .card {
   perspective: 1000px;
   background-color: #626262;
 }
-body main .sect .contact .conta .card .before-flip,
-body main .sect .contact .conta .card .after-flip {
+@media screen and (min-width: 768px) {
+  body main .sect .contact .card-mobile {
+    display: none;
+  }
+}
+body main .sect .contact .card-mobile .before-flip,
+body main .sect .contact .card-mobile .after-flip {
   display: flex;
   position: absolute;
   width: 100%;
@@ -262,28 +474,28 @@ body main .sect .contact .conta .card .after-flip {
   align-items: center;
   backface-visibility: hidden;
 }
-body main .sect .contact .conta .card .before-flip .touch h4 {
+body main .sect .contact .card-mobile .before-flip .touch h4 {
   font-size: 40px;
 }
-body main .sect .contact .conta .card .after-flip {
+body main .sect .contact .card-mobile .after-flip {
   padding: 20px;
   transform: rotateY(180deg);
 }
-body main .sect .contact .conta .card .after-flip .intro {
+body main .sect .contact .card-mobile .after-flip .intro {
   width: 60%;
 }
-body main .sect .contact .conta .card .after-flip .intro p {
+body main .sect .contact .card-mobile .after-flip .intro p {
   font-size: 12px;
   color: #ccc;
 }
-body main .sect .contact .conta .card .after-flip .intro h4 {
+body main .sect .contact .card-mobile .after-flip .intro h4 {
   font-size: 30px;
 }
-body main .sect .contact .conta .card .after-flip .kakao {
+body main .sect .contact .card-mobile .after-flip .kakao {
   width: 40%;
   text-align: center;
 }
-body main .sect .contact .conta .card .after-flip .kakao img {
+body main .sect .contact .card-mobile .after-flip .kakao img {
   width: 100%;
   height: 100px;
 }

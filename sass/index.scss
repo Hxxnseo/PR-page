@@ -2,63 +2,15 @@
 @import "./common.scss";
 @import "./mixin.scss";
 
-// body {
-//   background-color: $color-main;
-//   color: $color-sub;
-//   transition-duration: 0.8s;
-//   // overflow: hidden;
-
-//   header,
-//   main,
-//   footer {
-//     height: 100%;
-//   }
-
-//   header {
-//     height: 0;
-//     .header {
-//       // width: 100%;
-//       position: relative;
-
-//       .title-nav {
-//         position: fixed;
-//         top: calc(5%);
-//         left: calc(2.5% + 1rem);
-//       }
-//     }
-//   }
-
-//   .sect {
-//     // background-color: white;
-//     display: flex;
-//     width: 100%;
-//     height: 100%;
-//     justify-content: center;
-//     align-items: center;
-//   }
-
-//   .container {
-//     position: relative;
-//     width: 95%;
-//     height: 90%;
-//     // margin: auto;
-//     padding: 1rem;
-//     // background-color: aqua;
-//     border: 0.1px solid #ccc;
-
-//     h1 {
-//       font-size: 70px;
-//       font-weight: 600;
-//     }
-//   }
-// }
-
 @include responsive(pc-screens) {
 }
 
 body {
   background-color: $color-main;
   color: $color-sub;
+
+  // background-color: #e5e5e5;
+  // color: $color-main;
   transition-duration: 0.8s;
 
   header {
@@ -79,25 +31,29 @@ body {
 
       .title-nav {
         position: fixed;
-        // flex-direction: column;
         top: 50px;
         width: 95%;
 
-        // top: calc(5%);
-        // left: calc(2.5% + 1rem);
+        // flex-direction: column;
+
+        @include responsive(pc-screens) {
+          height: 0;
+          top: calc(25%);
+          left: calc(2.5% + 3rem);
+        }
 
         h1 {
           font-size: 0;
         }
 
         nav {
-          width: 100%;
+          position: relative;
+
           .gnb {
             display: flex;
-            width: 100%;
+            // width: 100%;
             height: 40px;
             flex-direction: row;
-            // border: 1px solid #ccc;
             background-color: #cccccc70;
             line-height: 40px;
 
@@ -107,13 +63,23 @@ body {
             //   background-color: #cccccc50;
             // }
 
+            @include responsive(pc-screens) {
+              width: 150px;
+              flex-direction: column;
+              background-color: transparent;
+            }
+
             li {
               width: 25%;
 
               a {
                 width: 100%;
-                text-align: center;
                 font-family: $font-sub;
+                text-align: center;
+
+                @include responsive(pc-screens) {
+                  text-align: left;
+                }
               }
             }
           }
@@ -146,8 +112,16 @@ body {
         // background-color: aqua;
         border: 0.1px solid #ccc;
 
+        @include responsive(pc-screens) {
+          padding: 3rem;
+        }
+
         .subTitle {
           margin-bottom: 160px;
+
+          @include responsive(pc-screens) {
+            margin-bottom: 0;
+          }
         }
       }
 
@@ -156,9 +130,10 @@ body {
         .turnColor {
           display: flex;
           position: absolute;
-          top: -30px;
+          top: -35px;
           right: 0;
           align-items: center;
+          justify-content: center;
 
           .square {
             width: 0.8rem;
@@ -183,17 +158,55 @@ body {
         }
 
         .introduce {
-          white-space: normal;
-          // width: 70%;
-          text-align: right;
+          // white-space: normal;
+          width: 100%;
 
-          h4,
+          text-align: right;
+          @include responsive(pc-screens) {
+            padding: 3rem;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
+
+          h4 {
+            margin-bottom: 30px;
+
+            @include responsive(pc-screens) {
+              font-size: 3rem;
+            }
+          }
+
           p {
             margin-bottom: 30px;
+
+            @include responsive(pc-screens) {
+              font-size: 1.3rem;
+            }
+          }
+
+          .mobIntro {
+            display: block;
+
+            @include responsive(tablet-screens) {
+              display: none;
+            }
+          }
+
+          .pcIntro {
+            display: none;
+
+            @include responsive(tablet-screens) {
+              display: block;
+            }
           }
 
           .big {
             font-size: 2.5rem;
+
+            @include responsive(pc-screens) {
+              font-size: 4rem;
+            }
           }
         }
       }
@@ -203,41 +216,94 @@ body {
 
         .slide-para {
           display: flex;
-          width: 100%;
           flex-direction: column;
-          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
 
-          .slides {
-            // background-color: #626262;
-            display: flex;
-            width: 4000px;
-            height: 500px;
-            order: 2;
+          @include responsive(pc-screens) {
+            flex-direction: row;
+          }
+
+          .slidewrapper {
             position: relative;
-            transition: transform 0.5s;
+            width: 200px;
+            height: 400px;
+            overflow: hidden;
+            order: 2;
+            line-height: 3;
+            margin: 0 auto;
 
-            .slideCont {
-              width: 300px;
-              margin: 2rem;
-              text-align: center;
+            @include responsive(pc-screens) {
+              order: 1;
+              width: 800px;
+              height: 600px;
 
-              h4 {
-                font-size: 30px;
+              // background-color: #626262;
+            }
+
+            .slides {
+              display: flex;
+              position: absolute;
+              width: 3000px;
+              height: 100%;
+
+              transition: all 0.5s;
+
+              @include responsive(pc-screens) {
+                width: 16000px;
               }
 
-              img {
-                width: 250px;
-                margin: 20px 0;
-              }
+              .slideCont {
+                width: 200px;
+                text-align: center;
 
-              p {
-                display: block;
-                width: 100%;
+                @include responsive(pc-screens) {
+                  width: 800px;
+                }
+                h4 {
+                  font-size: 24px;
+
+                  @include responsive(pc-screens) {
+                    font-size: 40px;
+                  }
+                }
+
+                img {
+                  width: 200px;
+                  margin: 20px 0;
+
+                  @include responsive(pc-screens) {
+                    width: 250px;
+                    margin: 30px 0;
+                  }
+                }
+
+                p {
+                  font-size: 14px;
+
+                  @include responsive(pc-screens) {
+                    font-size: 16px;
+                    background-color: #626262;
+                    width: 400px;
+                    margin-left: 200px;
+                  }
+                }
               }
             }
           }
 
           .para {
+            order: 1;
+
+            @include responsive(pc-screens) {
+              width: 40%;
+              // height: 700px;
+            }
+
+            // background-color: #ccc;
+
             h4,
             p {
               margin-bottom: 30px;
@@ -245,6 +311,13 @@ body {
 
             p {
               font-size: 14px;
+
+              line-height: 3;
+
+              @include responsive(pc-screens) {
+                font-size: 16px;
+                line-height: 2;
+              }
             }
 
             .blue {
@@ -271,8 +344,8 @@ body {
         height: 600px;
         // background-color: #ccc;
 
-        .card-pc {
-          display: none;
+        @include responsive(tablet-screens) {
+          height: 90%;
         }
 
         .conta {
@@ -280,62 +353,131 @@ body {
           justify-content: center;
           align-items: center;
 
-          // margin-bottom: 320px;
+          @include responsive(tablet-screens) {
+            // height: 100%;
+            width: 100%;
+            background-color: #626262;
+          }
+        }
 
-          .card {
+        .card-pc {
+          display: none;
+
+          @include responsive(tablet-screens) {
+            display: block;
             position: relative;
-            width: 300px;
-            height: 150px;
+            width: 800px;
+            height: 400px;
             transition: transform 1s;
             transform-style: preserve-3d;
             cursor: pointer;
             perspective: 1000px;
             background-color: #626262;
+          }
 
-            .before-flip,
-            .after-flip {
-              display: flex;
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              justify-content: center;
-              align-items: center;
-              backface-visibility: hidden;
+          .before-flip,
+          .after-flip {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+          }
+
+          .before-flip {
+            h4 {
+              font-size: 60px;
             }
+          }
 
-            .before-flip {
-              .touch {
-                h4 {
-                  font-size: 40px;
-                }
+          .after-flip {
+            padding: 20px;
+            transform: rotateY(180deg);
+
+            .intro {
+              width: 60%;
+
+              p {
+                font-size: 12px;
+                color: #ccc;
+              }
+
+              h4 {
+                font-size: 30px;
               }
             }
 
-            .after-flip {
-              padding: 20px;
-              transform: rotateY(180deg);
+            .kakao {
+              width: 40%;
+              text-align: center;
 
-              .intro {
-                width: 60%;
+              img {
+                width: 100%;
+                height: 300px;
+              }
+            }
+          }
+        }
 
-                p {
-                  font-size: 12px;
-                  color: #ccc;
-                }
+        .card-mobile {
+          position: relative;
+          width: 300px;
+          height: 150px;
+          transition: transform 1s;
+          transform-style: preserve-3d;
+          cursor: pointer;
+          perspective: 1000px;
+          background-color: #626262;
 
-                h4 {
-                  font-size: 30px;
-                }
+          @include responsive(tablet-screens) {
+            display: none;
+          }
+
+          .before-flip,
+          .after-flip {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+          }
+
+          .before-flip {
+            .touch {
+              h4 {
+                font-size: 40px;
+              }
+            }
+          }
+
+          .after-flip {
+            padding: 20px;
+            transform: rotateY(180deg);
+
+            .intro {
+              width: 60%;
+
+              p {
+                font-size: 12px;
+                color: #ccc;
               }
 
-              .kakao {
-                width: 40%;
-                text-align: center;
+              h4 {
+                font-size: 30px;
+              }
+            }
 
-                img {
-                  width: 100%;
-                  height: 100px;
-                }
+            .kakao {
+              width: 40%;
+              text-align: center;
+
+              img {
+                width: 100%;
+                height: 100px;
               }
             }
           }

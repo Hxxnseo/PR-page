@@ -55,7 +55,7 @@
 //   let curPos = 0;
 //   let postion = 0;
 //   let start_x, end_x;
-//   const IMAGE_WIDTH = 305;
+//   const IMAGE_WIDTH = 300;
 //   const images = document.querySelector(".slides");
 
 //   images.addEventListener("touchstart", touch_start);
