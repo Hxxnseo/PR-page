@@ -236,52 +236,59 @@
         }
       }
 
-      const $wrap = document.querySelector(".slide-para"); //overflow hidden 요소
-      const $moveBox = document.querySelector(".slidewrapper"); // absolute 요소
-      const $slideContain = document.querySelector(".slides"); //각 item을 묶어놓은 요소
-      const $btn = document.querySelectorAll(".skill"); //호버 할 텍스트 요소들
+    const $moveBox = document.querySelector(".slidewrapper"); // absolute 요소
+    const $slideContain = document.querySelector(".slides"); //각 item을 묶어놓은 요소
+    const $text = document.querySelectorAll(".skill"); //호버 할 텍스트 요소들
 
-      let ItemLength = $slideContain.children.length;
-      let currentIdx = 1;
-      let $clone = $slideContain.cloneNode(true);
-      let interval;
-      $moveBox.appendChild($clone);
+    //variable & initialze
+    let duration = 2000 //슬라이드 시간간격 (수정)  !transition 시간이랑 동일해야함  
+    let width = 800 //item 넓이 (수정) !요소들의 넓이는 모두 동일해야함 
+    let itemLength = $slideContain.children.length
+    let currentIdx = 1; 
+    let interval
+    let $clone = $slideContain.cloneNode(true)
 
-      console.log($btn[9]);
+    $moveBox.appendChild($clone)
+    $clone.classList.add('clone')
+    $text[0].style.color = 'red'
 
-      function slide() {
-        if (currentIdx > ItemLength) {
-          //초기화
-          $moveBox.classList.toggle("transition");
-          currentIdx = 0;
-          setTimeout(() => $moveBox.classList.toggle("transition"), 2100); // transition 시간보다 100 크게
-          return;
-        }
-        $moveBox.style.left = `-${800 * currentIdx}px`;
-        currentIdx++;
+    //fn
+    function slide() {
+      if (currentIdx > itemLength){ //reset
+        $moveBox.classList.toggle('transition')
+        currentIdx = 0
+        $moveBox.style.left = 0;
 
-        $btn.forEach(e => (e.style.color = ""));
-
-        $btn[currentIdx - 1].style.color = "red";
+        setTimeout(()=>{
+          $moveBox.classList.toggle('transition')
+        },duration - 100) 
       }
 
-      function hoverOnSlide(e, i) {
-        //마우스 호버로 스크롤 이동
-        clearInterval(interval);
-        currentIdx = i;
-        slide();
-        interval = setInterval(slide, 2000);
+      $moveBox.style.left = `-${width * currentIdx}vw`
+      $text.forEach((e) => e.style.color = '')
+      $text[currentIdx < itemLength ? currentIdx : 0].style.color = 'red'
+      currentIdx++
+    }
 
-        //색상 변경
-        $btn.forEach(e => (e.style.color = ""));
-        $btn[i].style.color = "red"; //색상추가
-      }
+    function hoverOnSlide(i) {
+      clearInterval(interval)
+      currentIdx = i
+      slide()
+    }
 
-      $btn.forEach((e, i) => {
-        e.addEventListener("mouseover", e => hoverOnSlide(e, i));
-      });
+    function leaveOnSlide() {
+      interval = setInterval(slide ,duration)
+      $text.forEach(e => e.style.background = '');
+    }
 
-      interval = setInterval(slide, 4000);
+    //event 
+    $text.forEach((e, i = 0) => {
+      e.addEventListener('mouseover',(e) => hoverOnSlide(i))
+      e.addEventListener('mouseleave',leaveOnSlide)
+    });
+
+    //interval 
+    interval = setInterval(slide ,duration)
     </script>
   </body>
 </html>
