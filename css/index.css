@@ -79,6 +79,7 @@ p {
 }
 
 body {
+  position: relative;
   background-color: black;
   color: white;
   transition-duration: 0.8s;
@@ -149,11 +150,6 @@ body main {
   width: 100%;
   height: 100%;
 }
-@media screen and (min-width: 1024px) {
-  body main {
-    height: 100vh;
-  }
-}
 body main .sect {
   display: flex;
   width: 100%;
@@ -161,6 +157,11 @@ body main .sect {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect {
+    height: 100vh;
+  }
 }
 body main .sect .container {
   position: relative;
@@ -294,54 +295,53 @@ body main .sect .about .slide-para .slidewrapper {
     order: 1;
   }
 }
-body main .sect .about .slide-para .slidewrapper .slides {
+body main .sect .about .slide-para .slidewrapper .move-box {
   display: flex;
   position: absolute;
-  width: 3000px;
-  height: 100%;
-  transition: all 0.5s;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  flex-wrap: nowrap;
 }
-@media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .slides {
-    width: 16000px;
-  }
+body main .sect .about .slide-para .slidewrapper .move-box .slides {
+  display: flex;
+  width: fit-content;
 }
-body main .sect .about .slide-para .slidewrapper .slides .slideCont {
-  width: 200px;
+body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont {
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .slides .slideCont {
-    width: 800px;
-  }
-}
-body main .sect .about .slide-para .slidewrapper .slides .slideCont h4 {
+body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont h4 {
   font-size: 24px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .slides .slideCont h4 {
+  body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont h4 {
     font-size: 40px;
   }
 }
-body main .sect .about .slide-para .slidewrapper .slides .slideCont img {
+body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg {
+  width: 200px;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg {
+    width: 800px;
+  }
+}
+body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg img {
   width: 200px;
   margin: 20px 0;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .slides .slideCont img {
-    width: 250px;
+  body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg img {
+    width: 300px;
     margin: 30px 0;
   }
 }
-body main .sect .about .slide-para .slidewrapper .slides .slideCont p {
+body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont p {
   font-size: 14px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .slides .slideCont p {
-    width: 400px;
+  body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont p {
     font-size: 16px;
-    background-color: #626262;
-    margin-left: 200px;
   }
 }
 body main .sect .about .slide-para .para {
@@ -380,6 +380,18 @@ body main .sect .about .slide-para .para .green {
 }
 body main .sect .project {
   position: relative;
+}
+body main .sect .project .mainPoint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  background-color: white;
+  cursor: pointer;
 }
 body main .sect .contact {
   position: relative;
@@ -512,13 +524,25 @@ body footer {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 1024px) {
+  body footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
 body footer .copyright {
   width: 95%;
   padding: 10px 0;
   font-size: 0.8rem;
   text-align: right;
 }
+@media screen and (min-width: 1024px) {
+  body footer .copyright {
+    padding: 0;
+    font-size: 1.1rem;
+  }
+}
 
 .transition {
-  transition: all 1s ease;
+  transition: left 3s ease;
 }/*# sourceMappingURL=index.css.map */
