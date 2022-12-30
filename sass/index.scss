@@ -361,9 +361,9 @@ body {
       .project {
         position: relative;
 
-        .mainPoint {
+        #mainPoint {
           position: absolute;
-          top: 50%;
+          top: 90%;
           left: 50%;
           z-index: 3;
           width: 30px;
@@ -372,6 +372,36 @@ body {
           border-radius: 30px;
           background-color: white;
           cursor: pointer;
+        }
+
+        #wrap {
+          position: relative;
+          width: 1200px;
+          height: 600px;
+          // border: 1px solid #ccc;
+          margin: 5% auto 0;
+
+          .point {
+            display: flex;
+            /* Styles for the point */
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: white;
+            transition: transform 0.2s ease;
+            color: black;
+            font-family: $font-sub;
+            font-size: 20px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
+
+          .point:hover {
+            transform: scale(1.2);
+            z-index: 100;
+          }
         }
       }
 

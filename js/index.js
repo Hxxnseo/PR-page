@@ -93,8 +93,3 @@ window.onload = function () {
     }
   }
 };
-
-document.addEventListener("click", e => {
-  console.log(e.clientX);
-  console.log(e.clientY);
-});

@@ -15,10 +15,10 @@
           <h1>서현</h1>
           <nav>
             <ul class="gnb">
-              <li><a href="#">HOME</a></li>
-              <li><a href="#">ABOUT</a></li>
-              <li><a href="#">PROJECT</a></li>
-              <li><a href="#">CONTACT</a></li>
+              <li><a href="#home">HOME</a></li>
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#project">PROJECT</a></li>
+              <li><a href="#contact">CONTACT</a></li>
             </ul>
           </nav>
         </div>
@@ -26,9 +26,9 @@
     </header>
 
     <main>
-      <section class="sect">
+      <section class="sect" id="home">
         <h2>home</h2>
-        <div class="container home">
+        <div class="container home" >
           <div class="turnColor">
             <div class="square light"></div>
             <p class="para light">LIGHT</p>
@@ -53,7 +53,7 @@
         </div> 
       </section>
 
-      <section class="sect">
+      <section class="sect" id="about">
         <h2>about</h2>
         <div class="container about">
           <h3 class="subTitle">ABOUT</h3>
@@ -159,16 +159,17 @@
         </div>
       </section>
 
-      <section class="sect">
+      <section class="sect" id="project">
         <h2>project</h2>
         <div class="container project">
           <h3 class="subTitle">PROJECT</h3>
 
-            <div class="mainPoint"></div>
+          <div id="mainPoint"></div>
+          <div id="wrap"></div>
         </div>
       </section>
 
-      <section class="sect">
+      <section class="sect" id="contact">
         <h2>contact</h2>
         <div class="container contact">
           <h3 class="subTitle">CONTACT</h3>
@@ -236,8 +237,8 @@
       console.log($slideCont.clientWidth);
 
       //variable & initialze
-      let duration = 3000; //슬라이드 시간간격 (수정)  !transition 시간이랑 동일해야함
-      let width = 800; //item 넓이 (수정) !요소들의 넓이는 모두 동일해야함
+      const DURATION = 3000; //슬라이드 시간간격 (수정)  !transition 시간이랑 동일해야함
+      const WIDTH = 800; //item 넓이 (수정) !요소들의 넓이는 모두 동일해야함
       let itemLength = $slideContain.children.length;
       let currentIdx = 1;
       let interval;
@@ -257,13 +258,13 @@
 
           setTimeout(() => {
             $moveBox.classList.toggle("transition");
-          }, duration - 100);
+          }, DURATION - 100);
         }
 
         console.log(currentIdx);
       console.log(itemLength);
 
-        $moveBox.style.left = `-${width * currentIdx}px`;
+        $moveBox.style.left = `-${WIDTH * currentIdx}px`;
         $text.forEach(e => (e.style.color = ""));
         $text[currentIdx < itemLength ? currentIdx : 0].style.color = "red";
         currentIdx++;
@@ -276,7 +277,7 @@
       }
 
       function leaveOnSlide() {
-        interval = setInterval(slide, duration);
+        interval = setInterval(slide, DURATION);
         $text.forEach(e => (e.style.background = ""));
       }
 
@@ -287,9 +288,37 @@
       });
 
       //interval
-      interval = setInterval(slide, duration);
+      interval = setInterval(slide, DURATION);
 
-      
+      const mainPoint = document.getElementById("mainPoint");
+      const wrap = document.getElementById("wrap");
+      let points = [];
+      const pointContent = ['#1. <br>COOR', '#2. <br>주저리', '#3. <br>Profile', '#4. <br> 피아노', '#5. <br>2048', '#6. <br>clone']
+
+      mainPoint.addEventListener("click", function () {
+        // Remove existing points
+        points.forEach(point => point.remove());
+        points = [];
+
+        // Generate new points
+        for (let i = 0; i < 6; i++) {
+          let x, y;
+
+          // Generate random x and y coordinates until an unoccupied position is found
+          do {
+            x = Math.floor(Math.random() * 1000) + 200;
+            y = Math.floor(Math.random() * 400) + 100;
+          } while (points.some(point => point.style.left === x + "px" && point.style.top === y + "px"));
+
+          const point = document.createElement("div");
+          point.style.left = x + "px";
+          point.style.top = y + "px";
+          point.classList.add("point");
+          point.innerHTML = pointContent[i];
+          wrap.appendChild(point);
+          points.push(point);
+        }
+      });
     </script>
   </body>
 </html>
