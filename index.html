@@ -234,7 +234,7 @@
       const $slideCont = document.querySelector('.slideCont');
       const $text = document.querySelectorAll(".skill"); //호버 할 텍스트 요소들 (수정)
 
-      console.log($slideCont.clientWidth);
+      // console.log($slideCont.clientWidth);
 
       //variable & initialze
       const DURATION = 3000; //슬라이드 시간간격 (수정)  !transition 시간이랑 동일해야함
@@ -261,8 +261,8 @@
           }, DURATION - 100);
         }
 
-        console.log(currentIdx);
-      console.log(itemLength);
+        // console.log(currentIdx);
+        // console.log(itemLength);
 
         $moveBox.style.left = `-${WIDTH * currentIdx}px`;
         $text.forEach(e => (e.style.color = ""));
@@ -293,31 +293,85 @@
       const mainPoint = document.getElementById("mainPoint");
       const wrap = document.getElementById("wrap");
       let points = [];
-      const pointContent = ['#1. <br>COOR', '#2. <br>주저리', '#3. <br>Profile', '#4. <br> 피아노', '#5. <br>2048', '#6. <br>clone']
+      // const pointContent = ['#1. <br>COOR', '#2. <br>주저리', '#3. <br>Profile', '#4. <br> 피아노', '#5. <br>2048', '#6. <br>clone']
+      const pointContent = ['#1', '#2', '#3', '#4', '#5', '#6']
 
       mainPoint.addEventListener("click", function () {
-        // Remove existing points
-        points.forEach(point => point.remove());
-        points = [];
+        while (wrap.firstChild) {
+          wrap.removeChild(wrap.firstChild);
+        }
 
-        // Generate new points
-        for (let i = 0; i < 6; i++) {
-          let x, y;
+        const points = [];
 
-          // Generate random x and y coordinates until an unoccupied position is found
-          do {
-            x = Math.floor(Math.random() * 1000) + 200;
-            y = Math.floor(Math.random() * 400) + 100;
-          } while (points.some(point => point.style.left === x + "px" && point.style.top === y + "px"));
+        for (let i = 0; i < pointContent.length; i++) {
+          const x = Math.floor(Math.random() * 1200) + 100;
+          const y = Math.floor(Math.random() * 400) ;
+          const point = {x, y};
+          points.push(point);
 
-          const point = document.createElement("div");
-          point.style.left = x + "px";
-          point.style.top = y + "px";
-          point.classList.add("point");
+
+          console.log(points[i]);
+        }
+
+        for (let i = 0; i < points.length; i++) {
+          for (let j = i + 1; j < points.length; j++) {
+            const distance = Math.sqrt(([points[i].x - points[j].x]) ** 2 + ([points[i].y - points[j].y]) ** 2);
+
+
+            if (distance < 80) {
+            console.log(distance);
+
+              points.splice(j, 1);
+              j--;
+            }
+          }
+        }
+
+        // for (const point of points) {
+        //   const point = document.createElement('div');
+        //   point.classList.add('point');
+        //   point.style.left = `${point.x}px`;
+        //   point.style.top = `${point.y}px`;
+        //   wrap.appendChild(point);
+
+        //   console.log(point.x);
+        // }
+
+        for (let i = 0; i < points.length; i++) {
+          const point = document.createElement('div');
+          point.style.left = points[i].x + "px";
+          point.style.top = points[i].y + "px";
+          point.classList.add('point');
           point.innerHTML = pointContent[i];
           wrap.appendChild(point);
-          points.push(point);
+
+
+          // console.log(point.style.left);
+          // console.log(point.style.top);
         }
+        // Remove existing points
+        // points.forEach(point => point.remove());
+        // points = [];
+
+        // // Generate new points
+        // for (let i = 0; i < 6; i++) {
+        //   let x, y;
+
+        //   // Generate random x and y coordinates until an unoccupied position is found
+        //   do {
+        //     x = Math.floor(Math.random() * 1000) + 200;
+        //     y = Math.floor(Math.random() * 400) + 100;
+        //   } while (points.some(point => point.style.left === x + "px" && point.style.top === y + "px"));
+
+        //   const point = document.createElement("div");
+        //   point.style.left = x + "px";
+        //   point.style.top = y + "px";
+        //   point.classList.add("point");
+        //   point.innerHTML = pointContent[i];
+        //   wrap.appendChild(point);
+        //   points.push(point);
+        // }
+
       });
     </script>
   </body>

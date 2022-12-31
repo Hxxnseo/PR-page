@@ -385,14 +385,14 @@ body {
             display: flex;
             /* Styles for the point */
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             background-color: white;
             transition: transform 0.2s ease;
             color: black;
             font-family: $font-sub;
-            font-size: 20px;
+            // font-size: 20px;
             align-items: center;
             justify-content: center;
             cursor: pointer;
