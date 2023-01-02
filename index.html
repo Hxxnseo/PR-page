@@ -165,7 +165,23 @@
           <h3 class="subTitle">PROJECT</h3>
 
           <div id="mainPoint"></div>
-          <div id="wrap"></div>
+          <div id="wrap">
+            <div class="modal" id="modal-0">
+              <div class="modal-overlay"></div>
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close" onclick="closeModal(0)">&times;</span>
+                  <h2>Modal 0</h2>
+                </div>
+                <div class="modal-body">
+                  Modal 0 content goes here
+                </div>
+                <div class="modal-footer">
+                  <button onclick="closeModal(0)">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -234,7 +250,6 @@
       const $slideCont = document.querySelector('.slideCont');
       const $text = document.querySelectorAll(".skill"); //호버 할 텍스트 요소들 (수정)
 
-      // console.log($slideCont.clientWidth);
 
       //variable & initialze
       const DURATION = 3000; //슬라이드 시간간격 (수정)  !transition 시간이랑 동일해야함
@@ -290,89 +305,119 @@
       //interval
       interval = setInterval(slide, DURATION);
 
-      const mainPoint = document.getElementById("mainPoint");
-      const wrap = document.getElementById("wrap");
-      let points = [];
+      // const mainPoint = document.getElementById("mainPoint");
+      // const wrap = document.getElementById("wrap");
+      // // const pointContent = ['#1', '#2', '#3', '#4', '#5', '#6'];
       // const pointContent = ['#1. <br>COOR', '#2. <br>주저리', '#3. <br>Profile', '#4. <br> 피아노', '#5. <br>2048', '#6. <br>clone']
-      const pointContent = ['#1', '#2', '#3', '#4', '#5', '#6']
+      
+      // mainPoint.addEventListener("click", function () {
+      //   wrap.innerHTML = '';
+        
+      //   const points = [];
 
-      mainPoint.addEventListener("click", function () {
-        while (wrap.firstChild) {
-          wrap.removeChild(wrap.firstChild);
-        }
+      //   for (let i = 0; i < pointContent.length; i++) {
+      //     let x = Math.floor(Math.random() * 1200);
+      //     let y = Math.floor(Math.random() * 400);
+      //     let point = {x, y};
 
-        const points = [];
+      //     // 생성된 점과 이미 생성된 점들과의 거리가 충분히 멀지 않은 경우에는 새로운 점을 생성하지 않고 다시 생성합니다.
+      //     while (points.some(p => Math.sqrt((p.x - x) ** 2 + (p.y - y) ** 2) < 100)) {
+      //       x = Math.floor(Math.random() * 1200);
+      //       y = Math.floor(Math.random() * 400);
+      //       point = {x, y};
+      //     }
 
-        for (let i = 0; i < pointContent.length; i++) {
-          const x = Math.floor(Math.random() * 1200) + 100;
-          const y = Math.floor(Math.random() * 400) ;
-          const point = {x, y};
-          points.push(point);
+      //     points.push(point);
+      //   }
 
+      //   for (let i = 0; i < points.length; i++) {
+      //     const point = document.createElement('div');
+      //     point.style.left = points[i].x + "px";
+      //     point.style.top = points[i].y + "px";
+      //     point.classList.add('point');
+      //     point.innerHTML = pointContent[i];
+      //     wrap.appendChild(point);
 
-          console.log(points[i]);
-        }
+      //     point.addEventListener("click", (e) => {
+      //       console.log(i);
+      //       openModal(i);
+      //     });
+      //   }
+      // });
+      
+      // // const modalElm = document.querySelectorAll(".modal")
+      // function openModal(idx) {
+      //   const modalId = `modal-${idx}`;
+      //   const modalElement = document.getElementById(modalId);
 
-        for (let i = 0; i < points.length; i++) {
-          for (let j = i + 1; j < points.length; j++) {
-            const distance = Math.sqrt(([points[i].x - points[j].x]) ** 2 + ([points[i].y - points[j].y]) ** 2);
+      //   // Show the modal by setting the "display" style to "block"
+      //   modalElement.style.display = "block";
+      // }
 
+      // function closeModal(idx) {
+      //   const modalId = `modal-${idx}`;
+      //   const modalElement = document.getElementById(modalId);
 
-            if (distance < 80) {
-            console.log(distance);
+      //   // Hide the modal by setting the "display" style to "none"
+      //   modalElement.style.display = "none";
+      // }
+      
+      const mainPoint = document.getElementById("mainPoint");
+const wrap = document.getElementById("wrap");
+const pointContent = ['#1. <br>COOR', '#2. <br>주저리', '#3. <br>Profile', '#4. <br> 피아노', '#5. <br>2048', '#6. <br>clone']
 
-              points.splice(j, 1);
-              j--;
-            }
-          }
-        }
+mainPoint.addEventListener("click", function () {
+  wrap.innerHTML = '';
 
-        // for (const point of points) {
-        //   const point = document.createElement('div');
-        //   point.classList.add('point');
-        //   point.style.left = `${point.x}px`;
-        //   point.style.top = `${point.y}px`;
-        //   wrap.appendChild(point);
+  const points = [];
 
-        //   console.log(point.x);
-        // }
+  for (let i = 0; i < pointContent.length; i++) {
+    let x = Math.floor(Math.random() * 1200);
+    let y = Math.floor(Math.random() * 400);
+    let point = {x, y};
 
-        for (let i = 0; i < points.length; i++) {
-          const point = document.createElement('div');
-          point.style.left = points[i].x + "px";
-          point.style.top = points[i].y + "px";
-          point.classList.add('point');
-          point.innerHTML = pointContent[i];
-          wrap.appendChild(point);
+    // If the distance between the newly created point and already created points is not far enough, do not create a new point and create it again.
+    while (points.some(p => Math.sqrt((p.x - x) ** 2 + (p.y - y) ** 2) < 100)) {
+      x = Math.floor(Math.random() * 1200);
+      y = Math.floor(Math.random() * 400);
+      point = {x, y};
+    }
 
+    points.push(point);
+  }
 
-          // console.log(point.style.left);
-          // console.log(point.style.top);
-        }
-        // Remove existing points
-        // points.forEach(point => point.remove());
-        // points = [];
+  for (let i = 0; i < points.length; i++) {
+    const point = document.createElement('div');
+    point.style.left = points[i].x + "px";
+    point.style.top = points[i].y + "px";
+    point.classList.add('point');
+    point.innerHTML = pointContent[i];
+    wrap.appendChild(point);
 
-        // // Generate new points
-        // for (let i = 0; i < 6; i++) {
-        //   let x, y;
+    point.addEventListener("click", (e) => {
+      console.log(i);
+      openModal(i);
+    });
+  }
+});
 
-        //   // Generate random x and y coordinates until an unoccupied position is found
-        //   do {
-        //     x = Math.floor(Math.random() * 1000) + 200;
-        //     y = Math.floor(Math.random() * 400) + 100;
-        //   } while (points.some(point => point.style.left === x + "px" && point.style.top === y + "px"));
+// const modalElm = document.querySelectorAll(".modal")
+function openModal(idx) {
+  const modalId = `modal-${idx}`;
+  const modalElement = document.getElementById(modalId);
 
-        //   const point = document.createElement("div");
-        //   point.style.left = x + "px";
-        //   point.style.top = y + "px";
-        //   point.classList.add("point");
-        //   point.innerHTML = pointContent[i];
-        //   wrap.appendChild(point);
-        //   points.push(point);
-        // }
+  // Show the modal by setting the "display" style to "block"
+  modalElement.style.display = "block";
+}
 
-      });
+function closeModal(idx) {
+  const modalId = `modal-${idx}`;
+  const modalElement = document.getElementById(modalId);
+
+  // Hide the modal by setting the "display" style to "none"
+  modalElement.style.display = "none";
+}
+
     </script>
   </body>
 </html>

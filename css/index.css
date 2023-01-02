@@ -121,6 +121,7 @@ body header .header .title-nav nav {
 }
 body header .header .title-nav nav .gnb {
   display: flex;
+  z-index: 100;
   height: 40px;
   flex-direction: row;
   background-color: rgba(204, 204, 204, 0.4392156863);
@@ -415,8 +416,31 @@ body main .sect .project #wrap .point {
   cursor: pointer;
 }
 body main .sect .project #wrap .point:hover {
-  transform: scale(1.2);
   z-index: 100;
+  transform: scale(1.2);
+}
+body main .sect .project #wrap .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+body main .sect .project #wrap .modal .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+body main .sect .project #wrap .modal .modal-open {
+  overflow: hidden;
 }
 body main .sect .contact {
   position: relative;
