@@ -34,6 +34,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -82,7 +83,6 @@ body {
   position: relative;
   background-color: black;
   color: white;
-  overflow: hidden;
   transition-duration: 0.8s;
 }
 body header {
@@ -127,6 +127,7 @@ body header .header .title-nav nav .gnb {
   flex-direction: row;
   background-color: rgba(204, 204, 204, 0.4392156863);
   line-height: 40px;
+  backdrop-filter: blur(2px);
 }
 @media screen and (min-width: 1024px) {
   body header .header .title-nav nav .gnb {
@@ -159,6 +160,7 @@ body main .sect {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  scroll-behavior: smooth;
 }
 @media screen and (min-width: 1024px) {
   body main .sect {
@@ -170,7 +172,6 @@ body main .sect .container {
   width: 95%;
   height: 90%;
   padding: 1rem;
-  border: 0.1px solid #ccc;
 }
 @media screen and (min-width: 1024px) {
   body main .sect .container {
@@ -300,10 +301,16 @@ body main .sect .about .slide-para .slidewrapper {
 body main .sect .about .slide-para .slidewrapper .move-box {
   display: flex;
   position: absolute;
+  width: 200px;
+  height: 400px;
   left: 0;
-  width: 800px;
-  height: 600px;
   flex-wrap: nowrap;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .slidewrapper .move-box {
+    width: 800px;
+    height: 600px;
+  }
 }
 body main .sect .about .slide-para .slidewrapper .move-box .slides {
   display: flex;
@@ -348,10 +355,28 @@ body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont p 
 }
 body main .sect .about .slide-para .para {
   order: 1;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 1024px) {
   body main .sect .about .slide-para .para {
     width: 40%;
+  }
+}
+body main .sect .about .slide-para .para .skills {
+  order: 2;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .para .skills {
+    order: 1;
+  }
+}
+body main .sect .about .slide-para .para .learning {
+  order: 1;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .about .slide-para .para .learning {
+    order: 2;
   }
 }
 body main .sect .about .slide-para .para h4,
@@ -415,6 +440,7 @@ body main .sect .project #wrap .point {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.5s;
 }
 body main .sect .project #wrap .point:hover {
   z-index: 100;
@@ -431,21 +457,49 @@ body main .sect .project .modal {
   height: 100%;
   /* dister; */
   overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 body main .sect .project .modal .modal-content {
+  position: relative;
+  width: 60%;
+  height: auto;
+  margin: 3% auto;
+  padding: 20px;
   background-color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
-  width: 60%;
-  height: auto;
-  padding: 20px;
-  margin: 3% auto;
-  position: relative;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+@-webkit-keyframes animatetop {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+body main .sect .project .modal .modal-content img {
+  width: 100%;
 }
 body main .sect .project .modal .modal-content #close {
-  cursor: pointer;
   position: fixed;
   z-index: 10000;
+  cursor: pointer;
   font-size: 30px;
 }
 body main .sect .project .modal .modal-content h3,
@@ -468,21 +522,26 @@ body main .sect .project .modal .modal-content .modal-header .logo-h3 {
   width: 50%;
 }
 body main .sect .project .modal .modal-content .modal-header .logo-h3 img {
-  margin-bottom: 3%;
   width: 100%;
+  margin-bottom: 3%;
 }
 body main .sect .project .modal .modal-content .modal-header .logo-h3 .view {
   display: flex;
   justify-content: center;
 }
 body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
-  color: black;
   margin: 3%;
-  padding: 1% 5%;
+  padding: 2% 5%;
+  color: black;
   border: 2px solid black;
   border-radius: 100%;
   font-size: 18px;
   font-family: "Jalnan";
+  transition: all 0.5s;
+}
+body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a:hover {
+  background-color: black;
+  color: white;
 }
 body main .sect .project .modal .modal-content .modal-main {
   position: relative;
@@ -499,6 +558,30 @@ body main .sect .project .modal .modal-content .modal-main .pic {
 }
 body main .sect .project .modal .modal-open {
   overflow: hidden;
+}
+body main .sect .project #modal-1 {
+  width: 100%;
+}
+body main .sect .project #modal-1 .view {
+  position: absolute;
+  top: 4.5%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+body main .sect .project #modal-1 .view a {
+  margin: 3%;
+  padding: 2% 5%;
+  color: black;
+  border: 2px solid black;
+  border-radius: 100%;
+  font-size: 18px;
+  font-family: "Jalnan";
+  transition: all 0.5s;
+}
+body main .sect .project #modal-1 .view a:hover {
+  background-color: black;
+  color: white;
 }
 body main .sect .contact {
   position: relative;

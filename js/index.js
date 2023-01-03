@@ -89,61 +89,74 @@ console.log(1);
 //   }
 // }
 
+const windowWidth = window.matchMedia("screen and (max-width: 768px)");
+
+if (windowWidth.matches) {
+  slide(200);
+  test = false;
+} else {
+  slide(800);
+  test = true;
+}
+
 //dom
-const $moveBox = document.querySelector(".move-box"); // absolute 요소 (수정)
-const $slideContain = document.querySelector(".slides"); //각 item을 묶어놓은 요소 (수정)
-const $slideCont = document.querySelector(".slideCont");
-const $text = document.querySelectorAll(".skill"); //호버 할 텍스트 요소들 (수정)
 
 //variable & initialze
-const DURATION = 3000; //슬라이드 시간간격 (수정)  !transition 시간이랑 동일해야함
-const WIDTH = 800; //item 넓이 (수정) !요소들의 넓이는 모두 동일해야함
-let itemLength = $slideContain.children.length;
-let currentIdx = 1;
-let interval;
-let $clone = $slideContain.cloneNode(true);
-$moveBox.appendChild($clone);
-$clone.classList.add("clone");
-$text[0].style.color = "red";
+function slide(size) {
+  const $moveBox = document.querySelector(".move-box"); // absolute 요소 (수정)
+  const $slideContain = document.querySelector(".slides"); //각 item을 묶어놓은 요소 (수정)
+  const $slideCont = document.querySelector(".slideCont");
+  const $text = document.querySelectorAll(".skill"); //호버 할 텍스트 요소들 (수정)
 
-//fn
-function slide() {
-  if (currentIdx > itemLength) {
-    //reset
-    $moveBox.classList.toggle("transition");
-    currentIdx = 0;
-    $moveBox.style.left = 0;
+  const DURATION = 3000; //슬라이드 시간간격 (수정)  !transition 시간이랑 동일해야함
+  const WIDTH = size; //item 넓이 (수정) !요소들의 넓이는 모두 동일해야함
+  let itemLength = $slideContain.children.length;
+  let currentIdx = 1;
+  let interval;
+  let $clone = $slideContain.cloneNode(true);
+  $moveBox.appendChild($clone);
+  $clone.classList.add("clone");
+  $text[0].style.color = "#a067ac";
 
-    setTimeout(() => {
+  //fn
+  function slide() {
+    if (currentIdx > itemLength) {
+      //reset
       $moveBox.classList.toggle("transition");
-    }, DURATION - 100);
+      currentIdx = 0;
+      $moveBox.style.left = 0;
+
+      setTimeout(() => {
+        $moveBox.classList.toggle("transition");
+      }, DURATION - 100);
+    }
+
+    $moveBox.style.left = `-${WIDTH * currentIdx}px`;
+    $text.forEach(e => (e.style.color = ""));
+    $text[currentIdx < itemLength ? currentIdx : 0].style.color = "#a067ac";
+    currentIdx++;
   }
 
-  $moveBox.style.left = `-${WIDTH * currentIdx}px`;
-  $text.forEach(e => (e.style.color = ""));
-  $text[currentIdx < itemLength ? currentIdx : 0].style.color = "red";
-  currentIdx++;
-}
+  function hoverOnSlide(i) {
+    clearInterval(interval);
+    currentIdx = i;
+    slide();
+  }
 
-function hoverOnSlide(i) {
-  clearInterval(interval);
-  currentIdx = i;
-  slide();
-}
+  function leaveOnSlide() {
+    interval = setInterval(slide, DURATION);
+    $text.forEach(e => (e.style.background = ""));
+  }
 
-function leaveOnSlide() {
+  //event
+  $text.forEach((e, i = 0) => {
+    e.addEventListener("mouseover", e => hoverOnSlide(i));
+    e.addEventListener("mouseleave", leaveOnSlide);
+  });
+
+  //interval
   interval = setInterval(slide, DURATION);
-  $text.forEach(e => (e.style.background = ""));
 }
-
-//event
-$text.forEach((e, i = 0) => {
-  e.addEventListener("mouseover", e => hoverOnSlide(i));
-  e.addEventListener("mouseleave", leaveOnSlide);
-});
-
-//interval
-interval = setInterval(slide, DURATION);
 
 const mainPoint = document.getElementById("mainPoint");
 const wrap = document.getElementById("wrap");
@@ -184,7 +197,8 @@ mainPoint.addEventListener("click", function () {
   }
 });
 
-// const modalElm = document.querySelectorAll(".modal")
+const modalElm = document.getElementsByClassName("modal");
+console.log(modalElm);
 function openModal(idx) {
   const modalId = `modal-${idx}`;
   const modalElement = document.getElementById(modalId);
@@ -204,12 +218,6 @@ function closeModal(idx) {
   modalElement.classList.add("hidden");
   document.body.classList.remove("modal-open");
 }
-
-// document.body.addEventListener('click', e => {
-//   if (e.target === modal) {
-//     modal.
-//   }
-// })
 
 let card_pc = document.querySelector(".card-pc");
 let card_mobile = document.querySelector(".card-mobile");

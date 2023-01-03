@@ -30,12 +30,12 @@
       <section class="sect" id="home">
         <h2>home</h2>
         <div class="container home" >
-          <div class="turnColor">
+          <!-- <div class="turnColor">
             <div class="square light"></div>
             <p class="para light">LIGHT</p>
             <div class="square dark"></div>
             <p class="para dark">DARK</p>
-          </div>
+          </div> -->
           <h3 class="subTitle">HOME</h3>
           <div class="introduce">
             <div class="mobIntro">
@@ -142,18 +142,22 @@
             </div>
             <div class="para">
               <p>주식에 관심이 생겨 구글링하던 중 <span class="blue">Python</span>으로 주식 데이터를 받아와서 <span class="blue">Pyqt5</span>로 데이터를 한눈에 볼 수 있는 위젯을 만들 수 있는 책을 발견해서 프로그램을 만들었습니다. 이때부터 프로그래밍에 흥미가 생겨 <span class="yellow">C, C++</span>를 공부하며 본격적인 개발을 시작하였습니다. 하지만 <span class="yellow">C, C++</span>는 제가 만든 프로그램처럼 직접 눈에 보이고 바로바로 결과가 나오는 언어가 아니다 보니 다른 분야를 찾아보다가 올해 초 <span class="green">HTML, CSS, JS</span>를 접하며 프론트엔드에 입문했습니다. 내 컴퓨터 속에만 있었던 작업물들을 웹을 통해 전달할 수 있고, 동적이고 웹에 생동감을 불어넣어 주는 <span class="green">JS</span>의 매력에 빠져 프론트엔드 개발자로 진로를 결정하게 되었습니다.</p>
-              <h4>저는 이 기술을 다뤄봤습니다.</h4>
-              <p>
-                <span class="skill">HTML5</span> - <span class="skill">CSS3</span> - <span class="skill">JavaScript</span> - <span class="skill">jQuery</span> - <span class="skill">React</span> - <span class="skill">TypeScript</span> <br />
-                <span class="skill">C</span> - <span class="skill">C++</span> - <span class="skill">Python</span> - <span class="skill">Pyqt5</span><br />
-                <span class="skill">Photoshop</span> - <span class="skill">Illustrator</span><br />
-                <span class="skill">Git</span>
-              </p>
-              <h4>저는 이 곳에서 배웠습니다.</h4>
-              <p>
-                바닐라코딩 프렙코스 13기<br /> (2022-05-30~2022.07.15) <br />
-                방송정보국제교육원 UI/UX기반 웹퍼블리싱&프론트앤드 <br />(2022-08-09~2023-01-26)
-              </p>
+              <div class="skills">
+                <h4>저는 이 기술을 다뤄봤습니다.</h4>
+                <p>
+                  <span class="skill">HTML5</span> - <span class="skill">CSS3</span> - <span class="skill">JavaScript</span> - <span class="skill">jQuery</span> - <span class="skill">React</span> - <span class="skill">TypeScript</span> <br />
+                  <span class="skill">C</span> - <span class="skill">C++</span> - <span class="skill">Python</span> - <span class="skill">Pyqt5</span><br />
+                  <span class="skill">Photoshop</span> - <span class="skill">Illustrator</span><br />
+                  <span class="skill">Git</span>
+                </p>
+              </div>
+              <div class="learning">
+                <h4>저는 이 곳에서 배웠습니다.</h4>
+                <p>
+                  바닐라코딩 프렙코스 13기<br /> (2022-05-30~2022.07.15) <br />
+                  방송정보국제교육원 UI/UX기반 웹퍼블리싱&프론트앤드 <br />(2022-08-09~2023-01-26)
+                </p>
+              </div>
             </div>
             </div>
           </div>
@@ -170,7 +174,7 @@
           <div class="modal hidden" id="modal-0">
             <div class="modal-content">
               <span id="close" onclick="closeModal(0)">❌</span>
-              &times;
+              
               <div class="modal-header">
                 <img src="./img/modal/coor/coor-header.png" alt="coor-header" />
                 <div class="logo-h3">
@@ -259,6 +263,17 @@
                     </div>
                   </div>
                 </section>
+              </div>
+            </div>
+          </div>
+          <div class="modal hidden" id="modal-1">
+            <div class="modal-content">
+              <div class="view">
+                <a href="#">View site</a>
+                <a href="#">View github</a>
+              </div>
+              <span id="close" onclick="closeModal(1)">❌</span>
+              <img src="./img/modal/jujery/jujery.png" alt="jujery">
               </div>
             </div>
           </div>

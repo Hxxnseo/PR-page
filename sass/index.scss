@@ -9,7 +9,7 @@ body {
   position: relative;
   background-color: $color-main;
   color: $color-sub;
-  overflow: hidden;
+  // overflow: hidden;
 
   // background-color: #e5e5e5;
   // color: $color-main;
@@ -65,6 +65,7 @@ body {
             // &:hover {
             //   background-color: #cccccc50;
             // }
+            backdrop-filter: blur(2px);
 
             @include responsive(pc-screens) {
               width: 150px;
@@ -102,6 +103,7 @@ body {
       justify-content: center;
       align-items: center;
       margin-top: 30px;
+      scroll-behavior: smooth;
 
       @include responsive(pc-screens) {
         height: 100vh;
@@ -114,7 +116,7 @@ body {
         // margin: auto;
         padding: 1rem;
         // background-color: aqua;
-        border: 0.1px solid #ccc;
+        // border: 0.1px solid #ccc;
 
         @include responsive(pc-screens) {
           padding: 3rem;
@@ -248,10 +250,16 @@ body {
             .move-box {
               display: flex;
               position: absolute;
+              width: 200px;
+              height: 400px;
               left: 0;
-              width: 800px;
-              height: 600px;
+
               flex-wrap: nowrap;
+
+              @include responsive(pc-screens) {
+                width: 800px;
+                height: 600px;
+              }
 
               .slides {
                 display: flex;
@@ -270,8 +278,6 @@ body {
 
                   // background-color: red;
 
-                  @include responsive(pc-screens) {
-                  }
                   h4 {
                     font-size: 24px;
 
@@ -317,13 +323,29 @@ body {
 
           .para {
             order: 1;
+            display: flex;
+            flex-direction: column;
 
             @include responsive(pc-screens) {
               width: 40%;
               // height: 700px;
             }
 
-            // background-color: #ccc;
+            .skills {
+              order: 2;
+
+              @include responsive(pc-screens) {
+                order: 1;
+              }
+            }
+
+            .learning {
+              order: 1;
+
+              @include responsive(pc-screens) {
+                order: 2;
+              }
+            }
 
             h4,
             p {
@@ -399,6 +421,8 @@ body {
             align-items: center;
             justify-content: center;
             cursor: pointer;
+
+            transition: all 0.5s;
           }
 
           .point:hover {
@@ -420,22 +444,53 @@ body {
           height: 100%;
           /* dister; */
           overflow: auto;
-          // background-color: aqua;
+          background-color: rgba(0, 0, 0, 0.6);
 
           .modal-content {
+            position: relative;
+            width: 60%;
+            height: auto;
+            margin: 3% auto;
+            padding: 20px;
             background-color: white;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
             border-radius: 10px;
-            width: 60%;
-            height: auto;
-            padding: 20px;
-            margin: 3% auto;
-            position: relative;
+
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+
+            @-webkit-keyframes animatetop {
+              from {
+                bottom: -300px;
+                opacity: 0;
+              }
+              to {
+                bottom: 0;
+                opacity: 1;
+              }
+            }
+
+            @keyframes animatetop {
+              from {
+                bottom: -300px;
+                opacity: 0;
+              }
+              to {
+                bottom: 0;
+                opacity: 1;
+              }
+            }
+
+            img {
+              width: 100%;
+            }
 
             #close {
-              cursor: pointer;
               position: fixed;
               z-index: 10000;
+              cursor: pointer;
               font-size: 30px;
             }
 
@@ -461,25 +516,31 @@ body {
                 width: 50%;
 
                 img {
-                  margin-bottom: 3%;
                   width: 100%;
+                  margin-bottom: 3%;
                 }
                 .view {
                   display: flex;
 
                   justify-content: center;
 
-                  // background-color: aqua;
                   a {
-                    color: black;
                     margin: 3%;
-                    padding: 1% 5%;
-                    border: 2px solid black;
+                    padding: 2% 5%;
+                    color: $color-main;
+                    border: 2px solid $color-main;
                     border-radius: 100%;
 
                     font-size: 18px;
 
                     font-family: $font-sub;
+
+                    transition: all 0.5s;
+
+                    &:hover {
+                      background-color: $color-main;
+                      color: $color-sub;
+                    }
                   }
                 }
               }
@@ -505,6 +566,38 @@ body {
 
           .modal-open {
             overflow: hidden;
+          }
+        }
+
+        #modal-1 {
+          width: 100%;
+
+          .view {
+            position: absolute;
+            top: 4.5%;
+            display: flex;
+            width: 100%;
+
+            justify-content: center;
+
+            a {
+              margin: 3%;
+              padding: 2% 5%;
+              color: $color-main;
+              border: 2px solid $color-main;
+              border-radius: 100%;
+
+              font-size: 18px;
+
+              font-family: $font-sub;
+
+              transition: all 0.5s;
+
+              &:hover {
+                background-color: $color-main;
+                color: $color-sub;
+              }
+            }
           }
         }
       }
