@@ -82,6 +82,7 @@ body {
   position: relative;
   background-color: black;
   color: white;
+  overflow: hidden;
   transition-duration: 0.8s;
 }
 body header {
@@ -432,20 +433,72 @@ body main .sect .project .modal {
   overflow: auto;
 }
 body main .sect .project .modal .modal-content {
-  background-color: #ccc;
+  background-color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
   width: 60%;
+  height: auto;
   padding: 20px;
   margin: 3% auto;
   position: relative;
 }
-body main .sect .project .modal .modal-open {
-  overflow: hidden;
-}
-body main .sect .project .modal #close {
+body main .sect .project .modal .modal-content #close {
   cursor: pointer;
   position: fixed;
+  z-index: 10000;
+  font-size: 30px;
+}
+body main .sect .project .modal .modal-content h3,
+body main .sect .project .modal .modal-content h4,
+body main .sect .project .modal .modal-content p {
+  color: black;
+  margin-bottom: 5%;
+}
+body main .sect .project .modal .modal-content .modal-header {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10%;
+}
+body main .sect .project .modal .modal-content .modal-header img {
+  width: 100%;
+}
+body main .sect .project .modal .modal-content .modal-header .logo-h3 {
+  position: absolute;
+  top: 30%;
+  width: 50%;
+}
+body main .sect .project .modal .modal-content .modal-header .logo-h3 img {
+  margin-bottom: 3%;
+  width: 100%;
+}
+body main .sect .project .modal .modal-content .modal-header .logo-h3 .view {
+  display: flex;
+  justify-content: center;
+}
+body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
+  color: black;
+  margin: 3%;
+  padding: 1% 5%;
+  border: 2px solid black;
+  border-radius: 100%;
+  font-size: 18px;
+  font-family: "Jalnan";
+}
+body main .sect .project .modal .modal-content .modal-main {
+  position: relative;
+  width: 100%;
+}
+body main .sect .project .modal .modal-content .modal-main img {
+  width: 100%;
+}
+body main .sect .project .modal .modal-content .modal-main section {
+  margin-bottom: 10%;
+}
+body main .sect .project .modal .modal-content .modal-main .pic {
+  margin-bottom: 5%;
+}
+body main .sect .project .modal .modal-open {
+  overflow: hidden;
 }
 body main .sect .contact {
   position: relative;

@@ -9,6 +9,7 @@ body {
   position: relative;
   background-color: $color-main;
   color: $color-sub;
+  overflow: hidden;
 
   // background-color: #e5e5e5;
   // color: $color-main;
@@ -419,24 +420,91 @@ body {
           height: 100%;
           /* dister; */
           overflow: auto;
+          // background-color: aqua;
 
           .modal-content {
-            background-color: #ccc;
+            background-color: white;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
             border-radius: 10px;
             width: 60%;
+            height: auto;
             padding: 20px;
             margin: 3% auto;
             position: relative;
+
+            #close {
+              cursor: pointer;
+              position: fixed;
+              z-index: 10000;
+              font-size: 30px;
+            }
+
+            h3,
+            h4,
+            p {
+              color: $color-main;
+              margin-bottom: 5%;
+            }
+
+            .modal-header {
+              position: relative;
+              width: 100%;
+              margin-bottom: 10%;
+
+              img {
+                width: 100%;
+              }
+
+              .logo-h3 {
+                position: absolute;
+                top: 30%;
+                width: 50%;
+
+                img {
+                  margin-bottom: 3%;
+                  width: 100%;
+                }
+                .view {
+                  display: flex;
+
+                  justify-content: center;
+
+                  // background-color: aqua;
+                  a {
+                    color: black;
+                    margin: 3%;
+                    padding: 1% 5%;
+                    border: 2px solid black;
+                    border-radius: 100%;
+
+                    font-size: 18px;
+
+                    font-family: $font-sub;
+                  }
+                }
+              }
+            }
+
+            .modal-main {
+              position: relative;
+              width: 100%;
+
+              img {
+                width: 100%;
+              }
+
+              section {
+                margin-bottom: 10%;
+              }
+
+              .pic {
+                margin-bottom: 5%;
+              }
+            }
           }
 
           .modal-open {
             overflow: hidden;
-          }
-
-          #close {
-            cursor: pointer;
-            position: fixed;
           }
         }
       }
