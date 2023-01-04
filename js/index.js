@@ -2,7 +2,7 @@ let test = true;
 const elm = document.querySelectorAll(".sect");
 const elmCount = elm.length;
 
-elm.forEach(function (item, index) {
+elm.forEach(function (item, idx) {
   item.addEventListener("mousewheel", function (event) {
     if (test) {
       event.preventDefault();
@@ -17,7 +17,7 @@ elm.forEach(function (item, index) {
 
       let moveTop = window.scrollY;
       console.log(moveTop);
-      let elmSelector = elm[index];
+      let elmSelector = elm[idx];
 
       // wheel down : move to next section
       if (delta < 0) {
@@ -43,10 +43,6 @@ elm.forEach(function (item, index) {
     }
   });
 });
-
-let a = false;
-
-console.log(1);
 
 // let curPos = 0;
 // let postion = 0;
@@ -103,13 +99,13 @@ if (windowWidth.matches) {
 
 //variable & initialze
 function slide(size) {
-  const $moveBox = document.querySelector(".move-box"); // absolute 요소 (수정)
-  const $slideContain = document.querySelector(".slides"); //각 item을 묶어놓은 요소 (수정)
+  const $moveBox = document.querySelector(".move-box");
+  const $slideContain = document.querySelector(".slides");
   const $slideCont = document.querySelector(".slideCont");
-  const $text = document.querySelectorAll(".skill"); //호버 할 텍스트 요소들 (수정)
+  const $text = document.querySelectorAll(".skill");
 
-  const DURATION = 3000; //슬라이드 시간간격 (수정)  !transition 시간이랑 동일해야함
-  const WIDTH = size; //item 넓이 (수정) !요소들의 넓이는 모두 동일해야함
+  const DURATION = 3000;
+  const WIDTH = size;
   let itemLength = $slideContain.children.length;
   let currentIdx = 1;
   let interval;
@@ -172,7 +168,6 @@ mainPoint.addEventListener("click", function () {
     let y = Math.floor(Math.random() * 400);
     let point = { x, y };
 
-    // If the distance between the newly created point and already created points is not far enough, do not create a new point and create it again.
     while (points.some(p => Math.sqrt((p.x - x) ** 2 + (p.y - y) ** 2) < 100)) {
       x = Math.floor(Math.random() * 1200);
       y = Math.floor(Math.random() * 400);
