@@ -167,6 +167,36 @@ body main .sect {
     height: 100vh;
   }
 }
+body main .sect .fade-out {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  color: white;
+  z-index: 999999;
+  animation: fadeOut 6s;
+  font-family: "Jalnan";
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .fade-out {
+    font-size: 60px;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 body main .sect .container {
   position: relative;
   width: 95%;
