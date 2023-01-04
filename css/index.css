@@ -167,18 +167,26 @@ body main .sect {
     height: 100vh;
   }
 }
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 body main .sect .fade-out {
-  font-size: 20px;
+  display: flex;
+  position: absolute;
+  z-index: 999999;
   width: 100%;
   height: 100%;
-  position: absolute;
+  font-size: 20px;
   background-color: black;
   color: white;
-  z-index: 999999;
   animation: fadeOut 6s;
   font-family: "Jalnan";
   animation-fill-mode: forwards;
-  display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: none;
@@ -187,14 +195,6 @@ body main .sect .fade-out {
 @media screen and (min-width: 1024px) {
   body main .sect .fade-out {
     font-size: 60px;
-  }
-}
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
 body main .sect .container {
@@ -297,18 +297,24 @@ body main .sect .home .introduce .big {
   }
 }
 body main .sect .home .scroll-down {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  width: 34px;
-  height: 55px;
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .home .scroll-down {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 5%;
+    left: 0;
+    width: 34px;
+    height: 55px;
+    margin: 0 auto;
+  }
 }
 body main .sect .home .scroll-down .mousey {
   width: 3px;
-  padding: 7px 12px;
   height: 35px;
+  padding: 7px 12px;
   border-radius: 25px;
   border: 2px solid #fff;
   box-sizing: content-box;
@@ -391,9 +397,9 @@ body main .sect .about .slide-para .slidewrapper {
 body main .sect .about .slide-para .slidewrapper .move-box {
   display: flex;
   position: absolute;
+  left: 0;
   width: 200px;
   height: 400px;
-  left: 0;
   flex-wrap: nowrap;
 }
 @media screen and (min-width: 1024px) {
@@ -444,8 +450,8 @@ body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont p 
   }
 }
 body main .sect .about .slide-para .para {
-  order: 1;
   display: flex;
+  order: 1;
   flex-direction: column;
 }
 @media screen and (min-width: 1024px) {
@@ -653,9 +659,9 @@ body main .sect .project #modal-1 {
   width: 100%;
 }
 body main .sect .project #modal-1 .view {
+  display: flex;
   position: absolute;
   top: 4.5%;
-  display: flex;
   width: 100%;
   justify-content: center;
 }
