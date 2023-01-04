@@ -505,22 +505,43 @@ body main .sect .project {
   position: relative;
 }
 body main .sect .project #mainPoint {
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  z-index: 3;
-  width: 30px;
-  height: 30px;
-  transform: translate(-50%, -50%);
-  border-radius: 30px;
-  background-color: white;
-  cursor: pointer;
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project #mainPoint {
+    display: block;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    z-index: 3;
+    padding: 10px 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    background-color: white;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+    letter-spacing: 0.1em;
+  }
+}
+body main .sect .project #mainPoint:hover {
+  background-color: black;
+  color: white;
+  letter-spacing: 0.3em;
+  text-align: center;
 }
 body main .sect .project #wrap {
-  position: relative;
-  width: 1200px;
-  height: 600px;
-  margin: 5% auto 0;
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project #wrap {
+    display: block;
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    margin: 5% auto 0;
+  }
 }
 body main .sect .project #wrap .point {
   display: flex;
@@ -758,10 +779,7 @@ body main .sect .contact .card-mobile {
   position: relative;
   width: 300px;
   height: 150px;
-  transition: transform 1s;
-  transform-style: preserve-3d;
   cursor: pointer;
-  perspective: 1000px;
   background-color: #626262;
 }
 @media screen and (min-width: 1024px) {
@@ -769,7 +787,6 @@ body main .sect .contact .card-mobile {
     display: none;
   }
 }
-body main .sect .contact .card-mobile .before-flip,
 body main .sect .contact .card-mobile .after-flip {
   display: flex;
   position: absolute;
@@ -777,14 +794,9 @@ body main .sect .contact .card-mobile .after-flip {
   height: 100%;
   justify-content: center;
   align-items: center;
-  backface-visibility: hidden;
-}
-body main .sect .contact .card-mobile .before-flip .touch h4 {
-  font-size: 40px;
 }
 body main .sect .contact .card-mobile .after-flip {
   padding: 20px;
-  transform: rotateY(180deg);
 }
 body main .sect .contact .card-mobile .after-flip .intro {
   width: 60%;
