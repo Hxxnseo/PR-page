@@ -53,7 +53,7 @@ body {
 
           .gnb {
             display: flex;
-            z-index: 100;
+            z-index: 10;
             // width: 100%;
             height: 40px;
             flex-direction: row;
@@ -119,23 +119,31 @@ body {
 
       .fade-out {
         display: flex;
-        position: absolute;
+        position: fixed;
         z-index: 999999;
+        left: 0;
+        top: 0;
         width: 100%;
-        height: 100%;
-        font-size: 20px;
+        height: 100vh;
         background-color: $color-main;
-        color: $color-sub;
-        animation: fadeOut 6s;
-        font-family: $font-sub;
+        animation: fadeOut 10s;
         animation-fill-mode: forwards;
         justify-content: center;
         align-items: center;
         pointer-events: none;
         text-align: center;
+        overflow: hidden;
 
-        @include responsive(pc-screens) {
-          font-size: 60px;
+        h4 {
+          width: 100%;
+          font-size: 20px;
+          color: $color-sub;
+          font-family: $font-sub;
+          background-color: black;
+
+          @include responsive(pc-screens) {
+            font-size: 60px;
+          }
         }
       }
 
@@ -428,6 +436,7 @@ body {
             display: flex;
             order: 1;
             flex-direction: column;
+            word-break: keep-all;
 
             @include responsive(pc-screens) {
               width: 40%;
@@ -487,6 +496,25 @@ body {
 
       .project {
         position: relative;
+
+        .mobile-project {
+          width: 100%;
+          // background-color: aqua;
+          text-align: center;
+          @include responsive(pc-screens) {
+            display: none;
+          }
+
+          li {
+            font-size: 40px;
+            font-family: $font-sub;
+            // color: #626262;
+            padding: 30px;
+            cursor: pointer;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+          }
+        }
 
         #mainPoint {
           display: none;

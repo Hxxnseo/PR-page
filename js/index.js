@@ -1,3 +1,7 @@
+setTimeout(() => {
+  scrollTo(0, 0);
+}, 100);
+
 let test = true;
 const elm = document.querySelectorAll(".sect");
 const elmCount = elm.length;
@@ -191,7 +195,8 @@ mainPoint.addEventListener("click", function () {
     });
   }
 });
-
+const $gnb = document.querySelector("nav");
+console.log($gnb);
 const modalElm = document.getElementsByClassName("modal");
 console.log(modalElm);
 function openModal(idx) {
@@ -200,6 +205,7 @@ function openModal(idx) {
   test = false;
 
   console.log(modalElement);
+  $gnb.style.display = "none";
   mainPoint.style.display = "none";
   modalElement.classList.remove("hidden");
 }
@@ -209,6 +215,7 @@ function closeModal(idx) {
   const modalElement = document.getElementById(modalId);
   test = true;
 
+  $gnb.style.display = "block";
   mainPoint.style.display = "block";
   modalElement.classList.add("hidden");
   document.body.classList.remove("modal-open");

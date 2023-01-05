@@ -14,6 +14,10 @@
   src: url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot?#iefix") format("embedded-opentype"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff2") format("woff2"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff") format("woff"), url("https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.ttf") format("truetype");
   font-display: swap;
 }
+@font-face {
+  font-family: "NotoSerifKR-Regular";
+  src: url(../font/NotoSerifKR-Regular.woff);
+}
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +27,7 @@
 
 body {
   font-size: 16px;
-  font-family: "Jalnan";
+  font-family: "NotoSerifKR-Regular";
 }
 
 ul,

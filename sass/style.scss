@@ -17,7 +17,12 @@
   font-display: swap;
 }
 
-$font-main: "Jalnan";
+@font-face {
+  font-family: "NotoSerifKR-Regular";
+  src: url(../font/NotoSerifKR-Regular.woff);
+}
+
+$font-main: "NotoSerifKR-Regular";
 $font-sub: "Jalnan";
 
 $color-main: black;
