@@ -92,7 +92,7 @@ elm.forEach(function (item, idx) {
 const windowWidth = window.matchMedia("screen and (max-width: 768px)");
 
 if (windowWidth.matches) {
-  slide(200);
+  slide(300);
   test = false;
 } else {
   slide(800);
@@ -168,12 +168,12 @@ mainPoint.addEventListener("click", function () {
   const points = [];
 
   for (let i = 0; i < pointContent.length; i++) {
-    let x = Math.floor(Math.random() * 1200);
+    let x = Math.floor(Math.random() * 1000);
     let y = Math.floor(Math.random() * 400);
     let point = { x, y };
 
     while (points.some(p => Math.sqrt((p.x - x) ** 2 + (p.y - y) ** 2) < 100)) {
-      x = Math.floor(Math.random() * 1200);
+      x = Math.floor(Math.random() * 1000);
       y = Math.floor(Math.random() * 400);
       point = { x, y };
     }
@@ -195,6 +195,18 @@ mainPoint.addEventListener("click", function () {
     });
   }
 });
+
+const $mob_projects = document.querySelectorAll(".mob-projects li");
+console.log($mob_projects[0].innerHTML);
+
+$mob_projects[0].addEventListener("click", () => {
+  openModal(0);
+});
+
+$mob_projects[1].addEventListener("click", () => {
+  openModal(1);
+});
+
 const $gnb = document.querySelector("nav");
 console.log($gnb);
 const modalElm = document.getElementsByClassName("modal");

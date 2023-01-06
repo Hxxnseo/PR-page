@@ -136,10 +136,11 @@ body {
 
         h4 {
           width: 100%;
-          font-size: 20px;
+          font-size: 30px;
           color: $color-sub;
-          font-family: $font-sub;
+          font-family: $font-main;
           background-color: black;
+          animation: fadeOut 5s;
 
           @include responsive(pc-screens) {
             font-size: 60px;
@@ -215,6 +216,7 @@ body {
 
           h4 {
             margin-bottom: 30px;
+            font-family: $font-main;
 
             @include responsive(pc-screens) {
               font-size: 3rem;
@@ -345,7 +347,7 @@ body {
 
           .slidewrapper {
             position: relative;
-            width: 200px;
+            width: 300px;
             height: 400px;
             margin: 0 auto;
             overflow: hidden;
@@ -362,7 +364,7 @@ body {
               display: flex;
               position: absolute;
               left: 0;
-              width: 200px;
+              width: 300px;
               height: 400px;
 
               flex-wrap: nowrap;
@@ -398,7 +400,7 @@ body {
                   }
 
                   .slideImg {
-                    width: 200px;
+                    width: 300px;
 
                     // background-color: #626262;
 
@@ -513,6 +515,10 @@ body {
             cursor: pointer;
             color: transparent;
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+
+            &:hover {
+              color: rgba(255, 255, 255, 0.5);
+            }
           }
         }
 
@@ -550,7 +556,7 @@ body {
           @include responsive(pc-screens) {
             display: block;
             position: relative;
-            width: 1200px;
+            width: 1000px;
             height: 600px;
             // border: 1px solid #ccc;
             margin: 5% auto 0;
@@ -599,7 +605,7 @@ body {
 
           .modal-content {
             position: relative;
-            width: 60%;
+            width: 90%;
             height: auto;
             margin: 3% auto;
             padding: 20px;
@@ -608,9 +614,13 @@ body {
             border-radius: 10px;
 
             -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.4s;
+            -webkit-animation-duration: 1s;
             animation-name: animatetop;
-            animation-duration: 0.4s;
+            animation-duration: 1s;
+
+            @include responsive(pc-screens) {
+              width: 60%;
+            }
 
             @-webkit-keyframes animatetop {
               from {
@@ -643,6 +653,22 @@ body {
               z-index: 10000;
               cursor: pointer;
               font-size: 30px;
+            }
+
+            h3 {
+              font-size: 2rem;
+
+              @include responsive(pc-screens) {
+                font-size: 3rem;
+              }
+            }
+
+            h4 {
+              font-size: 1.2rem;
+
+              @include responsive(pc-screens) {
+                font-size: 1.5em;
+              }
             }
 
             h3,
@@ -682,11 +708,16 @@ body {
                     border: 2px solid $color-main;
                     border-radius: 100%;
 
-                    font-size: 18px;
+                    font-size: 12px;
+                    text-align: center;
 
                     font-family: $font-sub;
 
                     transition: all 0.5s;
+
+                    @include responsive(tablet-screens) {
+                      font-size: 18px;
+                    }
 
                     &:hover {
                       background-color: $color-main;
@@ -700,6 +731,8 @@ body {
             .modal-main {
               position: relative;
               width: 100%;
+              margin-top: 100px;
+              // background-color: aqua;
 
               img {
                 width: 100%;
@@ -712,6 +745,14 @@ body {
               .pic {
                 margin-bottom: 5%;
               }
+
+              .coor-main-font {
+                font-family: $font-coor-main;
+              }
+
+              .coor-sub-font {
+                font-family: "맑은 고딕";
+              }
             }
           }
 
@@ -722,6 +763,7 @@ body {
 
         #modal-1 {
           width: 100%;
+          padding: 0;
 
           .view {
             display: flex;

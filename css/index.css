@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "NotoSansKR-Black";
   src: url(../font/NotoSansKR-Black.woff);
@@ -19,6 +20,10 @@
   src: url(../font/NotoSerifKR-Regular.woff);
 }
 @font-face {
+  font-family: "Lato-Regular";
+  src: url(../font/Lato-Regular.woff);
+}
+@font-face {
   font-family: "NotoSansKR-Black";
   src: url(../font/NotoSansKR-Black.woff);
 }
@@ -37,6 +42,10 @@
 @font-face {
   font-family: "NotoSerifKR-Regular";
   src: url(../font/NotoSerifKR-Regular.woff);
+}
+@font-face {
+  font-family: "Lato-Regular";
+  src: url(../font/Lato-Regular.woff);
 }
 * {
   margin: 0;
@@ -80,6 +89,7 @@ h3 {
 h4 {
   font-size: 1.5em;
   font-weight: 600;
+  font-family: "Jalnan";
 }
 
 p {
@@ -202,10 +212,11 @@ body main .sect .fade-out {
 }
 body main .sect .fade-out h4 {
   width: 100%;
-  font-size: 20px;
+  font-size: 30px;
   color: white;
-  font-family: "Jalnan";
+  font-family: "NotoSerifKR-Regular";
   background-color: black;
+  animation: fadeOut 5s;
 }
 @media screen and (min-width: 1024px) {
   body main .sect .fade-out h4 {
@@ -273,6 +284,7 @@ body main .sect .home .introduce {
 }
 body main .sect .home .introduce h4 {
   margin-bottom: 30px;
+  font-family: "NotoSerifKR-Regular";
 }
 @media screen and (min-width: 1024px) {
   body main .sect .home .introduce h4 {
@@ -395,7 +407,7 @@ body main .sect .about .slide-para {
 }
 body main .sect .about .slide-para .slidewrapper {
   position: relative;
-  width: 200px;
+  width: 300px;
   height: 400px;
   margin: 0 auto;
   overflow: hidden;
@@ -413,7 +425,7 @@ body main .sect .about .slide-para .slidewrapper .move-box {
   display: flex;
   position: absolute;
   left: 0;
-  width: 200px;
+  width: 300px;
   height: 400px;
   flex-wrap: nowrap;
 }
@@ -439,7 +451,7 @@ body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont h4
   }
 }
 body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg {
-  width: 200px;
+  width: 300px;
 }
 @media screen and (min-width: 1024px) {
   body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg {
@@ -537,6 +549,9 @@ body main .sect .project .mobile-project li {
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
 }
+body main .sect .project .mobile-project li:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
 body main .sect .project #mainPoint {
   display: none;
 }
@@ -571,7 +586,7 @@ body main .sect .project #wrap {
   body main .sect .project #wrap {
     display: block;
     position: relative;
-    width: 1200px;
+    width: 1000px;
     height: 600px;
     margin: 5% auto 0;
   }
@@ -611,7 +626,7 @@ body main .sect .project .modal {
 }
 body main .sect .project .modal .modal-content {
   position: relative;
-  width: 60%;
+  width: 90%;
   height: auto;
   margin: 3% auto;
   padding: 20px;
@@ -619,9 +634,14 @@ body main .sect .project .modal .modal-content {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
   -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 1s;
   animation-name: animatetop;
-  animation-duration: 0.4s;
+  animation-duration: 1s;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project .modal .modal-content {
+    width: 60%;
+  }
 }
 @-webkit-keyframes animatetop {
   from {
@@ -651,6 +671,22 @@ body main .sect .project .modal .modal-content #close {
   z-index: 10000;
   cursor: pointer;
   font-size: 30px;
+}
+body main .sect .project .modal .modal-content h3 {
+  font-size: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project .modal .modal-content h3 {
+    font-size: 3rem;
+  }
+}
+body main .sect .project .modal .modal-content h4 {
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project .modal .modal-content h4 {
+    font-size: 1.5em;
+  }
 }
 body main .sect .project .modal .modal-content h3,
 body main .sect .project .modal .modal-content h4,
@@ -685,9 +721,15 @@ body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
   color: black;
   border: 2px solid black;
   border-radius: 100%;
-  font-size: 18px;
+  font-size: 12px;
+  text-align: center;
   font-family: "Jalnan";
   transition: all 0.5s;
+}
+@media screen and (min-width: 768px) {
+  body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
+    font-size: 18px;
+  }
 }
 body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a:hover {
   background-color: black;
@@ -696,6 +738,7 @@ body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a:ho
 body main .sect .project .modal .modal-content .modal-main {
   position: relative;
   width: 100%;
+  margin-top: 100px;
 }
 body main .sect .project .modal .modal-content .modal-main img {
   width: 100%;
@@ -706,11 +749,18 @@ body main .sect .project .modal .modal-content .modal-main section {
 body main .sect .project .modal .modal-content .modal-main .pic {
   margin-bottom: 5%;
 }
+body main .sect .project .modal .modal-content .modal-main .coor-main-font {
+  font-family: "Lato-Regular";
+}
+body main .sect .project .modal .modal-content .modal-main .coor-sub-font {
+  font-family: "맑은 고딕";
+}
 body main .sect .project .modal .modal-open {
   overflow: hidden;
 }
 body main .sect .project #modal-1 {
   width: 100%;
+  padding: 0;
 }
 body main .sect .project #modal-1 .view {
   display: flex;

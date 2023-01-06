@@ -22,8 +22,14 @@
   src: url(../font/NotoSerifKR-Regular.woff);
 }
 
+@font-face {
+  font-family: "Lato-Regular";
+  src: url(../font/Lato-Regular.woff);
+}
+
 $font-main: "NotoSerifKR-Regular";
 $font-sub: "Jalnan";
+$font-coor-main: "Lato-Regular";
 
 $color-main: black;
 $color-sub: white;
