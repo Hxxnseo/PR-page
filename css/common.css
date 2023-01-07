@@ -18,6 +18,10 @@
   font-family: "NotoSerifKR-Regular";
   src: url(../font/NotoSerifKR-Regular.woff);
 }
+@font-face {
+  font-family: "Lato-Regular";
+  src: url(../font/Lato-Regular.woff);
+}
 * {
   margin: 0;
   padding: 0;
