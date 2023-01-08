@@ -101,6 +101,7 @@ body {
   position: relative;
   background-color: black;
   color: white;
+  overflow: hidden;
   transition-duration: 0.8s;
 }
 body header {

@@ -246,3 +246,8 @@ function click(e) {
     elem.style.transform = "rotateY(180deg)";
   }
 }
+function setZoomLevel(zoomLevel) {
+  document.body.style.zoom = zoomLevel;
+}
+
+setZoomLevel("100%");
