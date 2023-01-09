@@ -20,5 +20,13 @@
 }
 @font-face {
   font-family: "Lato-Regular";
-  src: url(../font/Lato-Regular.woff);
+  src: url(../font/modal/Lato-Regular.woff);
+}
+@font-face {
+  font-family: "SANGJU Gyeongcheon Island";
+  src: url(../font/modal/SANGJU\ Gyeongcheon\ Island.woff);
+}
+@font-face {
+  font-family: "NotoSerifKR-Regular";
+  src: url(../font/modal/NotoSerifKR-Regular.woff);
 }/*# sourceMappingURL=style.css.map */

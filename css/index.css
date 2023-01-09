@@ -21,7 +21,15 @@
 }
 @font-face {
   font-family: "Lato-Regular";
-  src: url(../font/Lato-Regular.woff);
+  src: url(../font/modal/Lato-Regular.woff);
+}
+@font-face {
+  font-family: "SANGJU Gyeongcheon Island";
+  src: url(../font/modal/SANGJU\ Gyeongcheon\ Island.woff);
+}
+@font-face {
+  font-family: "NotoSerifKR-Regular";
+  src: url(../font/modal/NotoSerifKR-Regular.woff);
 }
 @font-face {
   font-family: "NotoSansKR-Black";
@@ -45,7 +53,15 @@
 }
 @font-face {
   font-family: "Lato-Regular";
-  src: url(../font/Lato-Regular.woff);
+  src: url(../font/modal/Lato-Regular.woff);
+}
+@font-face {
+  font-family: "SANGJU Gyeongcheon Island";
+  src: url(../font/modal/SANGJU\ Gyeongcheon\ Island.woff);
+}
+@font-face {
+  font-family: "NotoSerifKR-Regular";
+  src: url(../font/modal/NotoSerifKR-Regular.woff);
 }
 * {
   margin: 0;
@@ -101,7 +117,6 @@ body {
   position: relative;
   background-color: black;
   color: white;
-  overflow: hidden;
   transition-duration: 0.8s;
 }
 body header {
@@ -698,7 +713,7 @@ body main .sect .project .modal .modal-content p {
 body main .sect .project .modal .modal-content .modal-header {
   position: relative;
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 100px;
 }
 body main .sect .project .modal .modal-content .modal-header img {
   width: 100%;
@@ -739,7 +754,6 @@ body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a:ho
 body main .sect .project .modal .modal-content .modal-main {
   position: relative;
   width: 100%;
-  margin-top: 100px;
 }
 body main .sect .project .modal .modal-content .modal-main img {
   width: 100%;
@@ -756,33 +770,74 @@ body main .sect .project .modal .modal-content .modal-main .coor-main-font {
 body main .sect .project .modal .modal-content .modal-main .coor-sub-font {
   font-family: "맑은 고딕";
 }
+body main .sect .project .modal .m1 {
+  background-image: url(../img/modal/jujery/jujery-background.png);
+}
+body main .sect .project .modal .m1 .logo-h3 h3 {
+  font-family: "SANGJU Gyeongcheon Island";
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project .modal .m1 .logo-h3 h3 {
+    font-size: 100px;
+  }
+}
+body main .sect .project .modal .m1 img {
+  margin-bottom: 5%;
+}
+body main .sect .project .modal .m1 p {
+  line-height: 2;
+}
+body main .sect .project .modal .m1 .concept-wrap img {
+  margin-bottom: 5%;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project .modal .m1 .concept-wrap img {
+    width: 80%;
+  }
+}
+body main .sect .project .modal .m1 .font {
+  width: 60%;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project .modal .m1 .font {
+    width: 40%;
+  }
+}
+body main .sect .project .modal .m1 .font .jujery-main-font {
+  margin-bottom: 10%;
+}
+body main .sect .project .modal .m2 img {
+  margin-bottom: 5%;
+}
+body main .sect .project .modal .m2 p {
+  line-height: 2;
+}
+body main .sect .project .modal .m2 .logo-h3 h3 {
+  color: #626262;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project .modal .m2 .logo-h3 h3 {
+    font-size: 100px;
+  }
+}
+body main .sect .project .modal .m2 .logo-h3 .view {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+@media screen and (min-width: 1024px) {
+  body main .sect .project .modal .m3 .logo-h3 h3 {
+    font-size: 100px;
+  }
+}
+body main .sect .project .modal .m3 .video {
+  width: 100%;
+}
+body main .sect .project .modal .m3 .video video {
+  width: 100%;
+}
 body main .sect .project .modal .modal-open {
   overflow: hidden;
-}
-body main .sect .project #modal-1 {
-  width: 100%;
-  padding: 0;
-}
-body main .sect .project #modal-1 .view {
-  display: flex;
-  position: absolute;
-  top: 4.5%;
-  width: 100%;
-  justify-content: center;
-}
-body main .sect .project #modal-1 .view a {
-  margin: 3%;
-  padding: 2% 5%;
-  color: black;
-  border: 2px solid black;
-  border-radius: 100%;
-  font-size: 18px;
-  font-family: "Jalnan";
-  transition: all 0.5s;
-}
-body main .sect .project #modal-1 .view a:hover {
-  background-color: black;
-  color: white;
 }
 body main .sect .contact {
   position: relative;

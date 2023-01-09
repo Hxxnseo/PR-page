@@ -199,13 +199,19 @@ mainPoint.addEventListener("click", function () {
 const $mob_projects = document.querySelectorAll(".mob-projects li");
 console.log($mob_projects[0].innerHTML);
 
-$mob_projects[0].addEventListener("click", () => {
-  openModal(0);
-});
+// $mob_projects[0].addEventListener("click", () => {
+//   openModal(0);
+// });
 
-$mob_projects[1].addEventListener("click", () => {
-  openModal(1);
-});
+// $mob_projects[1].addEventListener("click", () => {
+//   openModal(1);
+// });
+
+for (let i = 0; i < pointContent.length; i++) {
+  $mob_projects[i].addEventListener("click", () => {
+    openModal(i);
+  });
+}
 
 const $gnb = document.querySelector("nav");
 console.log($gnb);

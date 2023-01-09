@@ -9,7 +9,7 @@ body {
   position: relative;
   background-color: $color-main;
   color: $color-sub;
-  overflow: hidden;
+  // overflow: hidden;
 
   // background-color: #e5e5e5;
   // color: $color-main;
@@ -681,7 +681,7 @@ body {
             .modal-header {
               position: relative;
               width: 100%;
-              margin-bottom: 10%;
+              margin-bottom: 100px;
 
               img {
                 width: 100%;
@@ -691,6 +691,13 @@ body {
                 position: absolute;
                 top: 30%;
                 width: 50%;
+
+                // h3 {
+                //   font-size: 60px;
+                //   @include responsive(pc-screens) {
+                //     font-size: 100px;
+                //   }
+                // }
 
                 img {
                   width: 100%;
@@ -731,7 +738,7 @@ body {
             .modal-main {
               position: relative;
               width: 100%;
-              margin-top: 100px;
+              // margin-top: 100px;
               // background-color: aqua;
 
               img {
@@ -756,41 +763,92 @@ body {
             }
           }
 
-          .modal-open {
-            overflow: hidden;
-          }
-        }
-
-        #modal-1 {
-          width: 100%;
-          padding: 0;
-
-          .view {
-            display: flex;
-            position: absolute;
-            top: 4.5%;
-            width: 100%;
-
-            justify-content: center;
-
-            a {
-              margin: 3%;
-              padding: 2% 5%;
-              color: $color-main;
-              border: 2px solid $color-main;
-              border-radius: 100%;
-
-              font-size: 18px;
-
-              font-family: $font-sub;
-
-              transition: all 0.5s;
-
-              &:hover {
-                background-color: $color-main;
-                color: $color-sub;
+          .m1 {
+            background-image: url(../img/modal/jujery/jujery-background.png);
+            .logo-h3 {
+              h3 {
+                // font-size: 60px;
+                font-family: $font-jujery-main;
+                @include responsive(pc-screens) {
+                  font-size: 100px;
+                }
               }
             }
+
+            img {
+              margin-bottom: 5%;
+            }
+
+            p {
+              line-height: 2;
+            }
+
+            .concept-wrap {
+              img {
+                margin-bottom: 5%;
+
+                @include responsive(pc-screens) {
+                  width: 80%;
+                }
+              }
+            }
+
+            .font {
+              width: 60%;
+
+              @include responsive(pc-screens) {
+                width: 40%;
+              }
+              .jujery-main-font {
+                margin-bottom: 10%;
+              }
+            }
+          }
+
+          .m2 {
+            img {
+              margin-bottom: 5%;
+            }
+
+            p {
+              line-height: 2;
+            }
+
+            .logo-h3 {
+              h3 {
+                color: #626262;
+                @include responsive(pc-screens) {
+                  font-size: 100px;
+                }
+              }
+
+              .view {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+              }
+            }
+          }
+
+          .m3 {
+            .logo-h3 {
+              h3 {
+                @include responsive(pc-screens) {
+                  font-size: 100px;
+                }
+              }
+            }
+            .video {
+              width: 100%;
+
+              video {
+                width: 100%;
+              }
+            }
+          }
+
+          .modal-open {
+            overflow: hidden;
           }
         }
       }
