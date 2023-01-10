@@ -83,6 +83,7 @@ ol {
 a {
   display: block;
   text-decoration: none;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   color: white;
 }
 a:hover {
@@ -117,6 +118,8 @@ body {
   position: relative;
   background-color: black;
   color: white;
+  cursor: url(../img/cursor/circle-cursor.png), auto;
+  transition: cursor 13s ease-in-out;
   transition-duration: 0.8s;
 }
 body header {
@@ -193,7 +196,6 @@ body main .sect {
   height: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
   scroll-behavior: smooth;
 }
 @media screen and (min-width: 1024px) {
@@ -273,7 +275,7 @@ body main .sect .home .turnColor .square {
   width: 0.8rem;
   height: 0.8rem;
   border: 2px solid white;
-  cursor: pointer;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
 }
 body main .sect .home .turnColor .square.light {
   background-color: black;
@@ -284,7 +286,7 @@ body main .sect .home .turnColor .square.dark {
 body main .sect .home .turnColor .para {
   padding: 0.5rem;
   font-family: "Jalnan";
-  cursor: pointer;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
 }
 body main .sect .home .introduce {
   width: 100%;
@@ -338,6 +340,15 @@ body main .sect .home .introduce .big {
   body main .sect .home .introduce .big {
     font-size: 4rem;
   }
+}
+body main .sect .home .introduce .blue {
+  color: #47a3d2;
+}
+body main .sect .home .introduce .yellow {
+  color: #fbc22b;
+}
+body main .sect .home .introduce .green {
+  color: #8ce33e;
 }
 body main .sect .home .scroll-down {
   display: none;
@@ -534,7 +545,7 @@ body main .sect .about .slide-para .para p {
   }
 }
 body main .sect .about .slide-para .para p .skill {
-  cursor: pointer;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
 }
 body main .sect .about .slide-para .para .blue {
   color: #47a3d2;
@@ -561,7 +572,7 @@ body main .sect .project .mobile-project li {
   font-size: 40px;
   font-family: "Jalnan";
   padding: 30px;
-  cursor: pointer;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
 }
@@ -584,7 +595,7 @@ body main .sect .project #mainPoint {
     background-color: white;
     font-size: 1.5rem;
     color: black;
-    cursor: pointer;
+    cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
     transition: all 0.5s ease-in;
     letter-spacing: 0.1em;
   }
@@ -620,7 +631,7 @@ body main .sect .project #wrap .point {
   font-family: "Jalnan";
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   transition: all 0.5s;
 }
 body main .sect .project #wrap .point:hover {
@@ -636,7 +647,7 @@ body main .sect .project .modal {
   left: 0;
   width: 100%;
   height: 100%;
-  /* dister; */
+  z-index: 100000;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -649,6 +660,7 @@ body main .sect .project .modal .modal-content {
   background-color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
+  z-index: 1000;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 1s;
   animation-name: animatetop;
@@ -685,7 +697,7 @@ body main .sect .project .modal .modal-content img {
 body main .sect .project .modal .modal-content #close {
   position: fixed;
   z-index: 10000;
-  cursor: pointer;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   font-size: 30px;
 }
 body main .sect .project .modal .modal-content h3 {
@@ -873,7 +885,7 @@ body main .sect .contact .card-pc {
     height: 350px;
     transition: transform 1s;
     transform-style: preserve-3d;
-    cursor: pointer;
+    cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
     perspective: 1000px;
     background-color: #626262;
   }
@@ -918,7 +930,7 @@ body main .sect .contact .card-mobile {
   position: relative;
   width: 300px;
   height: 150px;
-  cursor: pointer;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   background-color: #626262;
 }
 @media screen and (min-width: 1024px) {

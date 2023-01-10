@@ -10,17 +10,22 @@ elm.forEach(function (item, idx) {
   item.addEventListener("mousewheel", function (event) {
     if (test) {
       event.preventDefault();
+
       let delta = 0;
 
       if (!event) event = window.event;
+
       if (event.wheelDelta) {
         delta = event.wheelDelta / 120;
-        console.log(event.wheelDelta);
-        if (window.opera) delta = -delta;
-      } else if (event.detail) delta = -event.detail / 3;
+
+        if (window.opera) {
+          delta = -delta;
+        }
+      } else if (event.detail) {
+        delta = -event.detail / 3;
+      }
 
       let moveTop = window.scrollY;
-      console.log(moveTop);
       let elmSelector = elm[idx];
 
       // wheel down : move to next section
@@ -89,6 +94,34 @@ elm.forEach(function (item, idx) {
 //   }
 // }
 
+const sections = document.querySelectorAll(".sect");
+const menuItems = document.querySelectorAll(".gnb li");
+const arrs = ["HOME", "ABOUT", "PROJECT", "CONTACT"];
+
+menuItems[0].firstChild.textContent = "\u25cf";
+
+window.addEventListener("scroll", () => {
+  const scrollPos = window.scrollY;
+
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const bottom = top + section.offsetHeight;
+
+    if (scrollPos >= top && scrollPos <= bottom) {
+      for (let i = 0; i < arrs.length; i++) {
+        menuItems[i].firstChild.textContent = arrs[i];
+      }
+      // console.log(section.id);
+
+      const menuItem = document.querySelector(`[href="#${section.id}"]`);
+      // console.log(menuItem);
+      menuItem.textContent = "\u25cf";
+    }
+
+    // console.log(top);
+  });
+});
+
 const windowWidth = window.matchMedia("screen and (max-width: 768px)");
 
 if (windowWidth.matches) {
@@ -110,10 +143,12 @@ function slide(size) {
 
   const DURATION = 3000;
   const WIDTH = size;
+
   let itemLength = $slideContain.children.length;
   let currentIdx = 1;
   let interval;
   let $clone = $slideContain.cloneNode(true);
+
   $moveBox.appendChild($clone);
   $clone.classList.add("clone");
   $text[0].style.color = "#a067ac";
@@ -134,6 +169,7 @@ function slide(size) {
     $moveBox.style.left = `-${WIDTH * currentIdx}px`;
     $text.forEach(e => (e.style.color = ""));
     $text[currentIdx < itemLength ? currentIdx : 0].style.color = "#a067ac";
+
     currentIdx++;
   }
 
@@ -160,7 +196,7 @@ function slide(size) {
 
 const mainPoint = document.getElementById("mainPoint");
 const wrap = document.getElementById("wrap");
-const pointContent = ["#1. <br>COOR", "#2. <br>주저리", "#3. <br>Profile", "#4. <br> 피아노", "#5. <br>2048", "#6. <br>clone"];
+const pointContent = ["#1. <br>COOR", "#2. <br>주저리", "#3. <br>Profile", "#4. <br> 피아노"];
 
 mainPoint.addEventListener("click", function () {
   wrap.innerHTML = "";
@@ -187,6 +223,7 @@ mainPoint.addEventListener("click", function () {
     point.style.top = points[i].y + "px";
     point.classList.add("point");
     point.innerHTML = pointContent[i];
+
     wrap.appendChild(point);
 
     point.addEventListener("click", e => {
@@ -197,15 +234,6 @@ mainPoint.addEventListener("click", function () {
 });
 
 const $mob_projects = document.querySelectorAll(".mob-projects li");
-console.log($mob_projects[0].innerHTML);
-
-// $mob_projects[0].addEventListener("click", () => {
-//   openModal(0);
-// });
-
-// $mob_projects[1].addEventListener("click", () => {
-//   openModal(1);
-// });
 
 for (let i = 0; i < pointContent.length; i++) {
   $mob_projects[i].addEventListener("click", () => {
@@ -214,9 +242,8 @@ for (let i = 0; i < pointContent.length; i++) {
 }
 
 const $gnb = document.querySelector("nav");
-console.log($gnb);
 const modalElm = document.getElementsByClassName("modal");
-console.log(modalElm);
+
 function openModal(idx) {
   const modalId = `modal-${idx}`;
   const modalElement = document.getElementById(modalId);
@@ -224,19 +251,22 @@ function openModal(idx) {
 
   console.log(modalElement);
   $gnb.style.display = "none";
-  mainPoint.style.display = "none";
   modalElement.classList.remove("hidden");
 }
 
 function closeModal(idx) {
   const modalId = `modal-${idx}`;
   const modalElement = document.getElementById(modalId);
-  test = true;
 
   $gnb.style.display = "block";
-  mainPoint.style.display = "block";
   modalElement.classList.add("hidden");
   document.body.classList.remove("modal-open");
+
+  if (windowWidth.matches) {
+    test = false;
+  } else {
+    test = true;
+  }
 }
 
 let card_pc = document.querySelector(".card-pc");
@@ -252,8 +282,20 @@ function click(e) {
     elem.style.transform = "rotateY(180deg)";
   }
 }
+
 function setZoomLevel(zoomLevel) {
   document.body.style.zoom = zoomLevel;
 }
 
 setZoomLevel("100%");
+
+function changeCursorToCircle() {
+  document.body.style.cursor = "url(../img/cursor/circle-cursor.png), auto";
+}
+
+function changeCursorToDot() {
+  document.body.style.cursor = "url(../img/cursor/dot-cursor.png), auto";
+}
+
+document.addEventListener("mouseup", changeCursorToCircle);
+document.addEventListener("mousedown", changeCursorToDot);

@@ -50,6 +50,7 @@ ol {
 a {
   display: block;
   text-decoration: none;
+  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   color: white;
 }
 a:hover {
