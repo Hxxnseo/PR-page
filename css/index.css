@@ -306,7 +306,7 @@ body main .sect .home .introduce h4 {
 }
 @media screen and (min-width: 1024px) {
   body main .sect .home .introduce h4 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 body main .sect .home .introduce p {

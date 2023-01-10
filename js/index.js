@@ -132,6 +132,41 @@ if (windowWidth.matches) {
   test = true;
 }
 
+const element = document.getElementById("introMe");
+const sentences = ["안녕하세요 꾸준히 공부하는 개발자 서현입니다.", "안녕하세요", "Nice to meet you"];
+let i = 0;
+
+console.log(element);
+
+function typeWriter(sentences, speed = 75) {
+  if (i < sentences.length) {
+    let j = 0;
+    let text = sentences[i];
+
+    let intervalId = setInterval(() => {
+      if (j < text.length) {
+        element.innerHTML += text.charAt(j);
+        j++;
+      } else {
+        clearInterval(intervalId);
+
+        i++;
+
+        if (i === sentences.length) {
+          i = 0;
+        }
+
+        setTimeout(() => {
+          element.innerHTML = "";
+          typeWriter(sentences, speed);
+        }, 2000);
+      }
+    }, speed);
+  }
+}
+
+typeWriter(sentences);
+
 //dom
 
 //variable & initialze

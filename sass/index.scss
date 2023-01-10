@@ -221,7 +221,7 @@ body {
             font-family: $font-main;
 
             @include responsive(pc-screens) {
-              font-size: 3rem;
+              font-size: 3.5rem;
             }
           }
 
