@@ -4,8 +4,10 @@
 }
 
 @font-face {
-  font-family: "BlackHanSans-Regular";
-  src: url(../font/BlackHanSans-Regular.woff);
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
@@ -32,12 +34,7 @@
   src: url(../font/modal/SANGJU\ Gyeongcheon\ Island.woff);
 }
 
-@font-face {
-  font-family: "NotoSerifKR-Regular";
-  src: url(../font/modal/NotoSerifKR-Regular.woff);
-}
-
-$font-main: "NotoSerifKR-Regular";
+$font-main: "NanumSquareRound";
 $font-sub: "Jalnan";
 $font-coor-main: "Lato-Regular";
 $font-jujery-main: "SANGJU Gyeongcheon Island";

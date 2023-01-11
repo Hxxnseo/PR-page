@@ -4,8 +4,10 @@
   src: url(../font/NotoSansKR-Black.woff);
 }
 @font-face {
-  font-family: "BlackHanSans-Regular";
-  src: url(../font/BlackHanSans-Regular.woff);
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "Jalnan";
@@ -36,8 +38,10 @@
   src: url(../font/NotoSansKR-Black.woff);
 }
 @font-face {
-  font-family: "BlackHanSans-Regular";
-  src: url(../font/BlackHanSans-Regular.woff);
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "Jalnan";
@@ -72,7 +76,7 @@
 
 body {
   font-size: 16px;
-  font-family: "NotoSerifKR-Regular";
+  font-family: "NanumSquareRound";
 }
 
 ul,
@@ -232,7 +236,7 @@ body main .sect .fade-out h4 {
   width: 100%;
   font-size: 30px;
   color: white;
-  font-family: "NotoSerifKR-Regular";
+  font-family: "NanumSquareRound";
   background-color: black;
   animation: fadeOut 5s;
 }
@@ -302,7 +306,7 @@ body main .sect .home .introduce {
 }
 body main .sect .home .introduce h4 {
   margin-bottom: 30px;
-  font-family: "NotoSerifKR-Regular";
+  font-family: "NanumSquareRound";
 }
 @media screen and (min-width: 1024px) {
   body main .sect .home .introduce h4 {

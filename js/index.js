@@ -2,13 +2,13 @@ setTimeout(() => {
   scrollTo(0, 0);
 }, 100);
 
-let test = true;
+let condition = true;
 const elm = document.querySelectorAll(".sect");
 const elmCount = elm.length;
 
 elm.forEach(function (item, idx) {
   item.addEventListener("mousewheel", function (event) {
-    if (test) {
+    if (condition) {
       event.preventDefault();
 
       let delta = 0;
@@ -53,47 +53,6 @@ elm.forEach(function (item, idx) {
   });
 });
 
-// let curPos = 0;
-// let postion = 0;
-// let start_x, end_x;
-// const IMAGE_WIDTH = 300;
-// const images = document.querySelector(".slides");
-
-// images.addEventListener("touchstart", touch_start);
-// images.addEventListener("touchend", touch_end);
-
-// function prev() {
-//   if (curPos > 0) {
-//     postion += IMAGE_WIDTH;
-//     console.log(postion);
-//     images.style.transform = `translateX(${postion}px)`;
-//     curPos = curPos - 1;
-//   }
-// }
-
-// function next() {
-//   if (curPos < 12) {
-//     postion -= IMAGE_WIDTH;
-//     console.log(postion);
-//     images.style.transform = `translateX(${postion}px)`;
-//     curPos = curPos + 1;
-//   }
-// }
-
-// function touch_start(event) {
-//   start_x = event.touches[0].pageX;
-// }
-
-// function touch_end(event) {
-//   end_x = event.changedTouches[0].pageX;
-//   console.log(1);
-//   if (start_x > end_x) {
-//     next();
-//   } else {
-//     prev();
-//   }
-// }
-
 const sections = document.querySelectorAll(".sect");
 const menuItems = document.querySelectorAll(".gnb li");
 const arrs = ["HOME", "ABOUT", "PROJECT", "CONTACT"];
@@ -111,14 +70,10 @@ window.addEventListener("scroll", () => {
       for (let i = 0; i < arrs.length; i++) {
         menuItems[i].firstChild.textContent = arrs[i];
       }
-      // console.log(section.id);
 
       const menuItem = document.querySelector(`[href="#${section.id}"]`);
-      // console.log(menuItem);
       menuItem.textContent = "\u25cf";
     }
-
-    // console.log(top);
   });
 });
 
@@ -126,14 +81,14 @@ const windowWidth = window.matchMedia("screen and (max-width: 768px)");
 
 if (windowWidth.matches) {
   slide(300);
-  test = false;
+  condition = false;
 } else {
   slide(800);
-  test = true;
+  condition = true;
 }
 
 const element = document.getElementById("introMe");
-const sentences = ["안녕하세요 꾸준히 공부하는 개발자 서현입니다.", "안녕하세요", "Nice to meet you"];
+const sentences = ["안녕하세요 꾸준히 공부하는 개발자 서현입니다.", "안녕하세요 더 나은 세상에 기여하고 싶은 개발자 서현입니다.", "안녕하세요 도전하는데 주저하지 않는 개발자 서현입니다."];
 let i = 0;
 
 console.log(element);
@@ -221,8 +176,13 @@ function slide(size) {
 
   //event
   $text.forEach((e, i = 0) => {
-    e.addEventListener("mouseover", e => hoverOnSlide(i));
-    e.addEventListener("mouseleave", leaveOnSlide);
+    if (windowWidth.matches) {
+      e.addEventListener("touchstart", e => hoverOnSlide(i));
+      e.addEventListener("touchend", leaveOnSlide);
+    } else {
+      e.addEventListener("mouseover", e => hoverOnSlide(i));
+      e.addEventListener("mouseleave", leaveOnSlide);
+    }
   });
 
   //interval
@@ -282,7 +242,7 @@ const modalElm = document.getElementsByClassName("modal");
 function openModal(idx) {
   const modalId = `modal-${idx}`;
   const modalElement = document.getElementById(modalId);
-  test = false;
+  condition = false;
 
   console.log(modalElement);
   $gnb.style.display = "none";
@@ -298,9 +258,9 @@ function closeModal(idx) {
   document.body.classList.remove("modal-open");
 
   if (windowWidth.matches) {
-    test = false;
+    condition = false;
   } else {
-    test = true;
+    condition = true;
   }
 }
 
