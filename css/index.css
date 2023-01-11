@@ -117,6 +117,7 @@ body {
   cursor: url(../img/cursor/circle-cursor.png), auto;
   transition: cursor 13s ease-in-out;
   transition-duration: 0.8s;
+  word-break: keep-all;
 }
 body header {
   width: 100%;
@@ -503,7 +504,6 @@ body main .sect .about .slide-para .para {
   display: flex;
   order: 1;
   flex-direction: column;
-  word-break: keep-all;
 }
 @media screen and (min-width: 1024px) {
   body main .sect .about .slide-para .para {

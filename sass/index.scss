@@ -16,6 +16,7 @@ body {
   // background-color: #e5e5e5;
   // color: $color-main;
   transition-duration: 0.8s;
+  word-break: keep-all;
 
   header {
     width: 100%;
@@ -452,7 +453,6 @@ body {
             display: flex;
             order: 1;
             flex-direction: column;
-            word-break: keep-all;
 
             @include responsive(pc-screens) {
               width: 40%;
