@@ -782,7 +782,7 @@ body {
             background-image: url(../img/modal/jujery/jujery-background.png);
             .logo-h3 {
               h3 {
-                // font-size: 60px;
+                font-size: 40px;
                 font-family: $font-jujery-main;
                 @include responsive(pc-screens) {
                   font-size: 100px;
@@ -821,6 +821,7 @@ body {
           }
 
           .m2 {
+            background-color: #ccc;
             img {
               margin-bottom: 5%;
             }
@@ -831,13 +832,15 @@ body {
 
             .logo-h3 {
               h3 {
-                color: #626262;
+                color: #fff;
+                font-size: 50px;
                 @include responsive(pc-screens) {
                   font-size: 100px;
                 }
               }
 
               .view {
+                color: #fff;
                 display: flex;
                 flex-direction: column;
                 width: 50%;
@@ -848,6 +851,7 @@ body {
           .m3 {
             .logo-h3 {
               h3 {
+                font-size: 50px;
                 @include responsive(pc-screens) {
                   font-size: 100px;
                 }
