@@ -15,6 +15,7 @@ body {
   transition: cursor 13s ease-in-out;
   transition-duration: 0.8s;
   word-break: keep-all;
+  overflow: hidden;
   font: {
     size: 16px;
     family: $font-main;
