@@ -1,8 +1,12 @@
+// 새로고침 시 첫 번째 섹션으로 올라가기
 setTimeout(() => {
   scrollTo(0, 0);
 }, 100);
 
+// 브라우저 사이즈에 따라 함수 실행할지 결정
 let condition = true;
+
+// 스크롤 시 한 섹션씩 이동
 const elm = document.querySelectorAll(".sect");
 const elmCount = elm.length;
 
@@ -53,6 +57,7 @@ elm.forEach(function (item, idx) {
   });
 });
 
+// 섹션 이동 시 메뉴의 디자인이 바뀌는
 const sections = document.querySelectorAll(".sect");
 const menuItems = document.querySelectorAll(".gnb li");
 const arrs = ["HOME", "ABOUT", "PROJECT", "CONTACT"];
@@ -77,6 +82,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
+// 브라우저 사이즈에 따라 달라지게
 const windowWidth = window.matchMedia("screen and (max-width: 768px)");
 
 if (windowWidth.matches) {
@@ -87,6 +93,7 @@ if (windowWidth.matches) {
   condition = true;
 }
 
+// 첫 섹션에서 타자치는 것처럼 나오게
 const element = document.getElementById("introMe");
 const sentences = ["안녕하세요 꾸준히 공부하는 개발자 서현입니다.", "안녕하세요 더 나은 세상에 기여하고 싶은 개발자 서현입니다.", "안녕하세요 새로운 것에 주저하지 않고 도전하는 개발자 서현입니다."];
 let i = 0;
@@ -122,9 +129,7 @@ function typeWriter(sentences, speed = 75) {
 
 typeWriter(sentences);
 
-//dom
-
-//variable & initialze
+// 두 번째 섹션에서의 슬라이드 구현
 function slide(size) {
   const $moveBox = document.querySelector(".move-box");
   const $slideContain = document.querySelector(".slides");
@@ -189,6 +194,7 @@ function slide(size) {
   interval = setInterval(slide, DURATION);
 }
 
+// 세 번째 섹션에서 랜덤으로 나타나는 공 구현
 const mainPoint = document.getElementById("mainPoint");
 const wrap = document.getElementById("wrap");
 const pointContent = ["#1. <br>COOR", "#2. <br>주저리", "#3. <br>Profile", "#4. <br> 피아노"];
@@ -228,6 +234,7 @@ mainPoint.addEventListener("click", function () {
   }
 });
 
+// 랜덤으로 나타나는 공을 클릭하면 모달창이 나오게 - mobile
 const $mob_projects = document.querySelectorAll(".mob-projects li");
 
 for (let i = 0; i < pointContent.length; i++) {
@@ -235,6 +242,8 @@ for (let i = 0; i < pointContent.length; i++) {
     openModal(i);
   });
 }
+
+// 랜덤으로 나타나는 공을 클릭하면 모달창이 나오게 - pc
 
 const $gnb = document.querySelector("nav");
 const modalElm = document.getElementsByClassName("modal");
@@ -264,6 +273,7 @@ function closeModal(idx) {
   }
 }
 
+// 네 번째 섹션에서 클릭하면 회전하는 카드 만듬
 let card_pc = document.querySelector(".card-pc");
 let card_mobile = document.querySelector(".card-mobile");
 card_pc.addEventListener("click", click);
@@ -278,18 +288,22 @@ function click(e) {
   }
 }
 
+// zoomlevel을 일정하게 맞추는
 function setZoomLevel(zoomLevel) {
   document.body.style.zoom = zoomLevel;
 }
 
 setZoomLevel("100%");
 
+// 마우스 커서의 모양을 mouseup, mousedown 할 때마다 바뀌게
 function changeCursorToCircle() {
-  document.body.style.cursor = "url(../img/cursor/circle-cursor.png), auto";
+  console.log("mouseup");
+  document.body.style.cursor = "url(https://hxxnseo.github.io/PR-page/img/cursor/circle-cursor.png), auto";
 }
 
 function changeCursorToDot() {
-  document.body.style.cursor = "url(../img/cursor/dot-cursor.png), auto";
+  console.log("mousedown");
+  document.body.style.cursor = "url(https://hxxnseo.github.io/PR-page/img/cursor/dot-cursor.png), auto";
 }
 
 document.addEventListener("mouseup", changeCursorToCircle);
