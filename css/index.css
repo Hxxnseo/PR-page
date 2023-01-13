@@ -211,9 +211,9 @@ body main .sect {
 body main .sect .fade-out {
   display: flex;
   position: fixed;
-  z-index: 999999;
-  left: 0;
   top: 0;
+  left: 0;
+  z-index: 999999;
   width: 100%;
   height: 100vh;
   background-color: black;
@@ -259,31 +259,6 @@ body main .sect .container .subTitle {
 }
 body main .sect .home {
   position: relative;
-}
-body main .sect .home .turnColor {
-  display: flex;
-  position: absolute;
-  top: -35px;
-  right: 0;
-  align-items: center;
-  justify-content: center;
-}
-body main .sect .home .turnColor .square {
-  width: 0.8rem;
-  height: 0.8rem;
-  border: 2px solid white;
-  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
-}
-body main .sect .home .turnColor .square.light {
-  background-color: black;
-}
-body main .sect .home .turnColor .square.dark {
-  background-color: white;
-}
-body main .sect .home .turnColor .para {
-  padding: 0.5rem;
-  font-family: "Jalnan";
-  cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
 }
 body main .sect .home .introduce {
   width: 100%;
@@ -565,9 +540,9 @@ body main .sect .project .mobile-project {
   }
 }
 body main .sect .project .mobile-project li {
+  padding: 30px;
   font-size: 40px;
   font-family: "Jalnan";
-  padding: 30px;
   cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
@@ -641,14 +616,15 @@ body main .sect .project .modal {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100000;
   width: 100%;
   height: 100%;
-  z-index: 100000;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
 }
 body main .sect .project .modal .modal-content {
   position: relative;
+  z-index: 1000;
   width: 90%;
   height: auto;
   margin: 3% auto;
@@ -656,7 +632,6 @@ body main .sect .project .modal .modal-content {
   background-color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
-  z-index: 1000;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 1s;
   animation-name: animatetop;
@@ -834,10 +809,10 @@ body main .sect .project .modal .m2 .logo-h3 h3 {
   }
 }
 body main .sect .project .modal .m2 .logo-h3 .view {
-  color: #fff;
   display: flex;
-  flex-direction: column;
   width: 50%;
+  color: #fff;
+  flex-direction: column;
 }
 body main .sect .project .modal .m3 .logo-h3 h3 {
   font-size: 50px;

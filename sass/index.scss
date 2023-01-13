@@ -9,12 +9,8 @@ body {
   position: relative;
   background-color: $color-main;
   color: $color-sub;
-  // overflow: hidden;
   cursor: url(../img/cursor/circle-cursor.png), auto;
   transition: cursor 13s ease-in-out;
-
-  // background-color: #e5e5e5;
-  // color: $color-main;
   transition-duration: 0.8s;
   word-break: keep-all;
 
@@ -39,8 +35,6 @@ body {
         top: 50px;
         width: 95%;
 
-        // flex-direction: column;
-
         @include responsive(pc-screens) {
           top: calc(25%);
           left: calc(2.5% + 3rem);
@@ -57,17 +51,10 @@ body {
           .gnb {
             display: flex;
             z-index: 10;
-            // width: 100%;
             height: 40px;
             flex-direction: row;
             background-color: #cccccc70;
             line-height: 40px;
-
-            // transition: all 0.5s linear;
-
-            // &:hover {
-            //   background-color: #cccccc50;
-            // }
             backdrop-filter: blur(2px);
 
             @include responsive(pc-screens) {
@@ -105,7 +92,7 @@ body {
       height: 100%;
       justify-content: center;
       align-items: center;
-      // margin-top: 30px;
+
       scroll-behavior: smooth;
 
       @include responsive(pc-screens) {
@@ -123,9 +110,9 @@ body {
       .fade-out {
         display: flex;
         position: fixed;
-        z-index: 999999;
-        left: 0;
         top: 0;
+        left: 0;
+        z-index: 999999;
         width: 100%;
         height: 100vh;
         background-color: $color-main;
@@ -155,10 +142,7 @@ body {
         position: relative;
         width: 95%;
         height: 90%;
-        // margin: auto;
         padding: 1rem;
-        // background-color: aqua;
-        // border: 0.1px solid #ccc;
 
         @include responsive(pc-screens) {
           padding: 3rem;
@@ -175,38 +159,8 @@ body {
 
       .home {
         position: relative;
-        .turnColor {
-          display: flex;
-          position: absolute;
-          top: -35px;
-          right: 0;
-          align-items: center;
-          justify-content: center;
-
-          .square {
-            width: 0.8rem;
-            height: 0.8rem;
-            border: 2px solid $color-sub;
-            cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
-          }
-
-          .square.light {
-            background-color: $color-main;
-          }
-
-          .square.dark {
-            background-color: $color-sub;
-          }
-
-          .para {
-            padding: 0.5rem;
-            font-family: $font-sub;
-            cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
-          }
-        }
 
         .introduce {
-          // white-space: normal;
           width: 100%;
 
           text-align: right;
@@ -393,18 +347,8 @@ body {
                 display: flex;
                 width: fit-content;
 
-                // background-color: aqua;
-
-                // @include responsive(pc-screens) {
-                //   width: 16000px;
-                // }
-
                 .slideCont {
-                  // width: 200px;
                   text-align: center;
-                  // width: 100%;
-
-                  // background-color: red;
 
                   h4 {
                     font-size: 24px;
@@ -416,8 +360,6 @@ body {
 
                   .slideImg {
                     width: 300px;
-
-                    // background-color: #626262;
 
                     @include responsive(pc-screens) {
                       width: 800px;
@@ -438,10 +380,7 @@ body {
                     font-size: 14px;
 
                     @include responsive(pc-screens) {
-                      // width: 400px;
                       font-size: 16px;
-                      // background-color: green;
-                      // margin-left: 200px;
                     }
                   }
                 }
@@ -456,7 +395,6 @@ body {
 
             @include responsive(pc-screens) {
               width: 40%;
-              // height: 700px;
             }
 
             .skills {
@@ -515,17 +453,16 @@ body {
 
         .mobile-project {
           width: 100%;
-          // background-color: aqua;
+
           text-align: center;
           @include responsive(pc-screens) {
             display: none;
           }
 
           li {
+            padding: 30px;
             font-size: 40px;
             font-family: $font-sub;
-            // color: #626262;
-            padding: 30px;
             cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
             color: transparent;
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
@@ -572,9 +509,8 @@ body {
             position: relative;
             width: 1000px;
             height: 600px;
-            // border: 1px solid #ccc;
+
             margin: 5% auto 0;
-            // background-color: aqua;
           }
 
           .point {
@@ -588,7 +524,7 @@ body {
             transition: transform 0.2s ease;
             color: black;
             font-family: $font-sub;
-            // font-size: 20px;
+
             align-items: center;
             justify-content: center;
             cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
@@ -603,7 +539,6 @@ body {
         }
 
         .hidden {
-          // background-color: aqua;
           display: none;
         }
 
@@ -611,14 +546,15 @@ body {
           position: fixed;
           top: 0;
           left: 0;
+          z-index: 100000;
           width: 100%;
           height: 100%;
-          z-index: 100000;
           overflow: auto;
           background-color: rgba(0, 0, 0, 0.6);
 
           .modal-content {
             position: relative;
+            z-index: 1000;
             width: 90%;
             height: auto;
             margin: 3% auto;
@@ -626,7 +562,6 @@ body {
             background-color: white;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
             border-radius: 10px;
-            z-index: 1000;
 
             -webkit-animation-name: animatetop;
             -webkit-animation-duration: 1s;
@@ -707,13 +642,6 @@ body {
                 top: 30%;
                 width: 50%;
 
-                // h3 {
-                //   font-size: 60px;
-                //   @include responsive(pc-screens) {
-                //     font-size: 100px;
-                //   }
-                // }
-
                 img {
                   width: 100%;
                   margin-bottom: 3%;
@@ -753,8 +681,6 @@ body {
             .modal-main {
               position: relative;
               width: 100%;
-              // margin-top: 100px;
-              // background-color: aqua;
 
               img {
                 width: 100%;
@@ -840,10 +766,10 @@ body {
               }
 
               .view {
-                color: #fff;
                 display: flex;
-                flex-direction: column;
                 width: 50%;
+                color: #fff;
+                flex-direction: column;
               }
             }
           }
@@ -875,7 +801,6 @@ body {
       .contact {
         position: relative;
         height: 600px;
-        // background-color: #ccc;
 
         @include responsive(pc-screens) {
           height: 90%;
@@ -891,7 +816,6 @@ body {
           transform: translate(-50%, -50%);
 
           @include responsive(pc-screens) {
-            // height: 100%;
             width: 100%;
           }
         }
@@ -962,10 +886,9 @@ body {
           position: relative;
           width: 300px;
           height: 150px;
-          // transition: transform 1s;
-          // transform-style: preserve-3d;
+
           cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
-          // perspective: 1000px;
+
           background-color: #626262;
 
           @include responsive(pc-screens) {
@@ -979,7 +902,6 @@ body {
             height: 100%;
             justify-content: center;
             align-items: center;
-            // backface-visibility: hidden;
           }
 
           .after-flip {
