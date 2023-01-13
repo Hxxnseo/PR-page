@@ -17,3 +17,17 @@
     }
   }
 }
+
+@mixin colorGroup() {
+  .blue {
+    color: $color-font-blue;
+  }
+
+  .yellow {
+    color: $color-font-yellow;
+  }
+
+  .green {
+    color: $color-font-green;
+  }
+}

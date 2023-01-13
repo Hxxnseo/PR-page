@@ -74,6 +74,7 @@ body {
   transition: cursor 13s ease-in-out;
   transition-duration: 0.8s;
   word-break: keep-all;
+  overflow: hidden;
   font-size: 16px;
   font-family: "NanumSquareRound";
   -webkit-user-select: none;
@@ -280,6 +281,15 @@ main .sect .home .introduce {
     padding: 3rem;
   }
 }
+main .sect .home .introduce .blue {
+  color: #47a3d2;
+}
+main .sect .home .introduce .yellow {
+  color: #fbc22b;
+}
+main .sect .home .introduce .green {
+  color: #8ce33e;
+}
 main .sect .home .introduce h4 {
   margin-bottom: 30px;
   font-family: "NanumSquareRound";
@@ -320,15 +330,6 @@ main .sect .home .introduce .big {
   main .sect .home .introduce .big {
     font-size: 4rem;
   }
-}
-main .sect .home .introduce .blue {
-  color: #47a3d2;
-}
-main .sect .home .introduce .yellow {
-  color: #fbc22b;
-}
-main .sect .home .introduce .green {
-  color: #8ce33e;
 }
 main .sect .home .scroll-down {
   display: none;
@@ -493,6 +494,15 @@ main .sect .about .slide-para .para {
     width: 40%;
   }
 }
+main .sect .about .slide-para .para .blue {
+  color: #47a3d2;
+}
+main .sect .about .slide-para .para .yellow {
+  color: #fbc22b;
+}
+main .sect .about .slide-para .para .green {
+  color: #8ce33e;
+}
 main .sect .about .slide-para .para .skills {
   order: 2;
 }
@@ -525,15 +535,6 @@ main .sect .about .slide-para .para p {
 }
 main .sect .about .slide-para .para p .skill {
   cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
-}
-main .sect .about .slide-para .para .blue {
-  color: #47a3d2;
-}
-main .sect .about .slide-para .para .yellow {
-  color: #fbc22b;
-}
-main .sect .about .slide-para .para .green {
-  color: #8ce33e;
 }
 main .sect .project {
   position: relative;
@@ -593,7 +594,6 @@ main .sect .project #wrap {
 }
 main .sect .project #wrap .point {
   display: flex;
-  /* Styles for the point */
   position: absolute;
   width: 80px;
   height: 80px;

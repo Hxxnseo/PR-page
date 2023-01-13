@@ -165,6 +165,7 @@ main {
           bottom: 0;
           padding: 3rem;
         }
+        @include colorGroup();
 
         h4 {
           margin-bottom: 30px;
@@ -205,18 +206,6 @@ main {
           @include responsive(pc-screens) {
             font-size: 4rem;
           }
-        }
-
-        .blue {
-          color: $color-font-blue;
-        }
-
-        .yellow {
-          color: $color-font-yellow;
-        }
-
-        .green {
-          color: $color-font-green;
         }
       }
       .scroll-down {
@@ -392,6 +381,8 @@ main {
             width: 40%;
           }
 
+          @include colorGroup();
+
           .skills {
             order: 2;
 
@@ -426,18 +417,6 @@ main {
             .skill {
               cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
             }
-          }
-
-          .blue {
-            color: $color-font-blue;
-          }
-
-          .yellow {
-            color: $color-font-yellow;
-          }
-
-          .green {
-            color: $color-font-green;
           }
         }
       }
@@ -497,13 +476,11 @@ main {
           position: relative;
           width: 1000px;
           height: 600px;
-
           margin: 5% auto 0;
         }
 
         .point {
           display: flex;
-          /* Styles for the point */
           position: absolute;
           width: 80px;
           height: 80px;
@@ -512,11 +489,9 @@ main {
           transition: transform 0.2s ease;
           color: black;
           font-family: $font-sub;
-
           align-items: center;
           justify-content: center;
           cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
-
           transition: all 0.5s;
         }
 
