@@ -8,10 +8,22 @@
 }
 
 body {
+  position: relative;
+  background-color: $color-main;
+  color: $color-sub;
+  cursor: url(../img/cursor/circle-cursor.png), auto;
+  transition: cursor 13s ease-in-out;
+  transition-duration: 0.8s;
+  word-break: keep-all;
   font: {
     size: 16px;
     family: $font-main;
   }
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ul,

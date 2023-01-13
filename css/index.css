@@ -67,8 +67,19 @@
 }
 
 body {
+  position: relative;
+  background-color: black;
+  color: white;
+  cursor: url(../img/cursor/circle-cursor.png), auto;
+  transition: cursor 13s ease-in-out;
+  transition-duration: 0.8s;
+  word-break: keep-all;
   font-size: 16px;
   font-family: "NanumSquareRound";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ul,
@@ -110,19 +121,10 @@ p {
   line-height: 1.6;
 }
 
-body {
-  position: relative;
-  background-color: black;
-  color: white;
-  cursor: url(../img/cursor/circle-cursor.png), auto;
-  transition: cursor 13s ease-in-out;
-  transition-duration: 0.8s;
-  word-break: keep-all;
-}
-body header {
+header {
   width: 100%;
 }
-body header .header {
+header .header {
   display: flex;
   position: relative;
   z-index: 100;
@@ -132,29 +134,29 @@ body header .header {
   justify-content: center;
 }
 @media screen and (min-width: 1024px) {
-  body header .header {
+  header .header {
     height: 0;
   }
 }
-body header .header .title-nav {
+header .header .title-nav {
   position: fixed;
   top: 50px;
   width: 95%;
 }
 @media screen and (min-width: 1024px) {
-  body header .header .title-nav {
+  header .header .title-nav {
     top: 25%;
     left: calc(2.5% + 3rem);
     height: 0;
   }
 }
-body header .header .title-nav h1 {
+header .header .title-nav h1 {
   font-size: 0;
 }
-body header .header .title-nav nav {
+header .header .title-nav nav {
   position: relative;
 }
-body header .header .title-nav nav .gnb {
+header .header .title-nav nav .gnb {
   display: flex;
   z-index: 10;
   height: 40px;
@@ -164,30 +166,36 @@ body header .header .title-nav nav .gnb {
   backdrop-filter: blur(2px);
 }
 @media screen and (min-width: 1024px) {
-  body header .header .title-nav nav .gnb {
+  header .header .title-nav nav .gnb {
     width: 150px;
     flex-direction: column;
     background-color: transparent;
   }
 }
-body header .header .title-nav nav .gnb li {
+header .header .title-nav nav .gnb li {
   width: 25%;
 }
-body header .header .title-nav nav .gnb li a {
+@media screen and (min-width: 1024px) {
+  header .header .title-nav nav .gnb li {
+    margin-bottom: 10px;
+  }
+}
+header .header .title-nav nav .gnb li a {
   width: 100%;
   font-family: "Jalnan";
   text-align: center;
 }
 @media screen and (min-width: 1024px) {
-  body header .header .title-nav nav .gnb li a {
+  header .header .title-nav nav .gnb li a {
     text-align: left;
   }
 }
-body main {
+
+main {
   width: 100%;
   height: 100%;
 }
-body main .sect {
+main .sect {
   display: flex;
   width: 100%;
   height: 100%;
@@ -196,7 +204,7 @@ body main .sect {
   scroll-behavior: smooth;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect {
+  main .sect {
     height: 100vh;
   }
 }
@@ -208,7 +216,7 @@ body main .sect {
     opacity: 0;
   }
 }
-body main .sect .fade-out {
+main .sect .fade-out {
   display: flex;
   position: fixed;
   top: 0;
@@ -225,7 +233,7 @@ body main .sect .fade-out {
   text-align: center;
   overflow: hidden;
 }
-body main .sect .fade-out h4 {
+main .sect .fade-out h4 {
   width: 100%;
   font-size: 30px;
   color: white;
@@ -234,99 +242,99 @@ body main .sect .fade-out h4 {
   animation: fadeOut 5s;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .fade-out h4 {
+  main .sect .fade-out h4 {
     font-size: 60px;
   }
 }
-body main .sect .container {
+main .sect .container {
   position: relative;
   width: 95%;
   height: 90%;
   padding: 1rem;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .container {
+  main .sect .container {
     padding: 3rem;
   }
 }
-body main .sect .container .subTitle {
+main .sect .container .subTitle {
   margin-bottom: 160px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .container .subTitle {
+  main .sect .container .subTitle {
     margin-bottom: 0;
   }
 }
-body main .sect .home {
+main .sect .home {
   position: relative;
 }
-body main .sect .home .introduce {
+main .sect .home .introduce {
   width: 100%;
   text-align: right;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .home .introduce {
+  main .sect .home .introduce {
     position: absolute;
     right: 0;
     bottom: 0;
     padding: 3rem;
   }
 }
-body main .sect .home .introduce h4 {
+main .sect .home .introduce h4 {
   margin-bottom: 30px;
   font-family: "NanumSquareRound";
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .home .introduce h4 {
+  main .sect .home .introduce h4 {
     font-size: 3.5rem;
   }
 }
-body main .sect .home .introduce p {
+main .sect .home .introduce p {
   margin-bottom: 30px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .home .introduce p {
+  main .sect .home .introduce p {
     font-size: 1.3rem;
   }
 }
-body main .sect .home .introduce .mobIntro {
+main .sect .home .introduce .mobIntro {
   display: block;
 }
 @media screen and (min-width: 768px) {
-  body main .sect .home .introduce .mobIntro {
+  main .sect .home .introduce .mobIntro {
     display: none;
   }
 }
-body main .sect .home .introduce .pcIntro {
+main .sect .home .introduce .pcIntro {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  body main .sect .home .introduce .pcIntro {
+  main .sect .home .introduce .pcIntro {
     display: block;
   }
 }
-body main .sect .home .introduce .big {
+main .sect .home .introduce .big {
   font-size: 2.5rem;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .home .introduce .big {
+  main .sect .home .introduce .big {
     font-size: 4rem;
   }
 }
-body main .sect .home .introduce .blue {
+main .sect .home .introduce .blue {
   color: #47a3d2;
 }
-body main .sect .home .introduce .yellow {
+main .sect .home .introduce .yellow {
   color: #fbc22b;
 }
-body main .sect .home .introduce .green {
+main .sect .home .introduce .green {
   color: #8ce33e;
 }
-body main .sect .home .scroll-down {
+main .sect .home .scroll-down {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .home .scroll-down {
+  main .sect .home .scroll-down {
     display: block;
     position: absolute;
     right: 0;
@@ -337,7 +345,7 @@ body main .sect .home .scroll-down {
     margin: 0 auto;
   }
 }
-body main .sect .home .scroll-down .mousey {
+main .sect .home .scroll-down .mousey {
   width: 3px;
   height: 35px;
   padding: 7px 12px;
@@ -345,7 +353,7 @@ body main .sect .home .scroll-down .mousey {
   border: 2px solid #fff;
   box-sizing: content-box;
 }
-body main .sect .home .scroll-down .mousey .scroller {
+main .sect .home .scroll-down .mousey .scroller {
   width: 3px;
   height: 8px;
   border-radius: 25%;
@@ -388,10 +396,10 @@ body main .sect .home .scroll-down .mousey .scroller {
     animation-timing-function: ease-out;
   }
 }
-body main .sect .about {
+main .sect .about {
   position: relative;
 }
-body main .sect .about .slide-para {
+main .sect .about .slide-para {
   display: flex;
   width: 100%;
   height: 100%;
@@ -400,11 +408,11 @@ body main .sect .about .slide-para {
   justify-content: center;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para {
+  main .sect .about .slide-para {
     flex-direction: row;
   }
 }
-body main .sect .about .slide-para .slidewrapper {
+main .sect .about .slide-para .slidewrapper {
   position: relative;
   width: 300px;
   height: 400px;
@@ -414,13 +422,13 @@ body main .sect .about .slide-para .slidewrapper {
   line-height: 3;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper {
+  main .sect .about .slide-para .slidewrapper {
     width: 800px;
     height: 600px;
     order: 1;
   }
 }
-body main .sect .about .slide-para .slidewrapper .move-box {
+main .sect .about .slide-para .slidewrapper .move-box {
   display: flex;
   position: absolute;
   left: 0;
@@ -429,117 +437,117 @@ body main .sect .about .slide-para .slidewrapper .move-box {
   flex-wrap: nowrap;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .move-box {
+  main .sect .about .slide-para .slidewrapper .move-box {
     width: 800px;
     height: 600px;
   }
 }
-body main .sect .about .slide-para .slidewrapper .move-box .slides {
+main .sect .about .slide-para .slidewrapper .move-box .slides {
   display: flex;
   width: fit-content;
 }
-body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont {
+main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont {
   text-align: center;
 }
-body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont h4 {
+main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont h4 {
   font-size: 24px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont h4 {
+  main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont h4 {
     font-size: 40px;
   }
 }
-body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg {
+main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg {
   width: 300px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg {
+  main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg {
     width: 800px;
   }
 }
-body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg img {
+main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg img {
   width: 200px;
   margin: 20px 0;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg img {
+  main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont .slideImg img {
     width: 300px;
     margin: 30px 0;
   }
 }
-body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont p {
+main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont p {
   font-size: 14px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont p {
+  main .sect .about .slide-para .slidewrapper .move-box .slides .slideCont p {
     font-size: 16px;
   }
 }
-body main .sect .about .slide-para .para {
+main .sect .about .slide-para .para {
   display: flex;
   order: 1;
   flex-direction: column;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .para {
+  main .sect .about .slide-para .para {
     width: 40%;
   }
 }
-body main .sect .about .slide-para .para .skills {
+main .sect .about .slide-para .para .skills {
   order: 2;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .para .skills {
+  main .sect .about .slide-para .para .skills {
     order: 1;
   }
 }
-body main .sect .about .slide-para .para .learning {
+main .sect .about .slide-para .para .learning {
   order: 1;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .para .learning {
+  main .sect .about .slide-para .para .learning {
     order: 2;
   }
 }
-body main .sect .about .slide-para .para h4,
-body main .sect .about .slide-para .para p {
+main .sect .about .slide-para .para h4,
+main .sect .about .slide-para .para p {
   margin-bottom: 30px;
 }
-body main .sect .about .slide-para .para p {
+main .sect .about .slide-para .para p {
   font-size: 14px;
   line-height: 3;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .about .slide-para .para p {
+  main .sect .about .slide-para .para p {
     font-size: 16px;
     line-height: 2;
   }
 }
-body main .sect .about .slide-para .para p .skill {
+main .sect .about .slide-para .para p .skill {
   cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
 }
-body main .sect .about .slide-para .para .blue {
+main .sect .about .slide-para .para .blue {
   color: #47a3d2;
 }
-body main .sect .about .slide-para .para .yellow {
+main .sect .about .slide-para .para .yellow {
   color: #fbc22b;
 }
-body main .sect .about .slide-para .para .green {
+main .sect .about .slide-para .para .green {
   color: #8ce33e;
 }
-body main .sect .project {
+main .sect .project {
   position: relative;
 }
-body main .sect .project .mobile-project {
+main .sect .project .mobile-project {
   width: 100%;
   text-align: center;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .mobile-project {
+  main .sect .project .mobile-project {
     display: none;
   }
 }
-body main .sect .project .mobile-project li {
+main .sect .project .mobile-project li {
   padding: 30px;
   font-size: 40px;
   font-family: "Jalnan";
@@ -547,14 +555,14 @@ body main .sect .project .mobile-project li {
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
 }
-body main .sect .project .mobile-project li:hover {
+main .sect .project .mobile-project li:hover {
   color: rgba(255, 255, 255, 0.5);
 }
-body main .sect .project #mainPoint {
+main .sect .project #mainPoint {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project #mainPoint {
+  main .sect .project #mainPoint {
     display: block;
     position: absolute;
     top: 90%;
@@ -571,17 +579,11 @@ body main .sect .project #mainPoint {
     letter-spacing: 0.1em;
   }
 }
-body main .sect .project #mainPoint:hover {
-  background-color: black;
-  color: white;
-  letter-spacing: 0.3em;
-  text-align: center;
-}
-body main .sect .project #wrap {
+main .sect .project #wrap {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project #wrap {
+  main .sect .project #wrap {
     display: block;
     position: relative;
     width: 1000px;
@@ -589,7 +591,7 @@ body main .sect .project #wrap {
     margin: 5% auto 0;
   }
 }
-body main .sect .project #wrap .point {
+main .sect .project #wrap .point {
   display: flex;
   /* Styles for the point */
   position: absolute;
@@ -605,14 +607,14 @@ body main .sect .project #wrap .point {
   cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   transition: all 0.5s;
 }
-body main .sect .project #wrap .point:hover {
+main .sect .project #wrap .point:hover {
   z-index: 100;
   transform: scale(1.2);
 }
-body main .sect .project .hidden {
+main .sect .project .hidden {
   display: none;
 }
-body main .sect .project .modal {
+main .sect .project .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -622,7 +624,7 @@ body main .sect .project .modal {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
 }
-body main .sect .project .modal .modal-content {
+main .sect .project .modal .modal-content {
   position: relative;
   z-index: 1000;
   width: 90%;
@@ -638,7 +640,7 @@ body main .sect .project .modal .modal-content {
   animation-duration: 1s;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .modal .modal-content {
+  main .sect .project .modal .modal-content {
     width: 60%;
   }
 }
@@ -662,59 +664,59 @@ body main .sect .project .modal .modal-content {
     opacity: 1;
   }
 }
-body main .sect .project .modal .modal-content img {
+main .sect .project .modal .modal-content img {
   width: 100%;
 }
-body main .sect .project .modal .modal-content #close {
+main .sect .project .modal .modal-content #close {
   position: fixed;
   z-index: 10000;
   cursor: url(../img/cursor/circle-cursor-pointer.png), auto;
   font-size: 30px;
 }
-body main .sect .project .modal .modal-content h3 {
+main .sect .project .modal .modal-content h3 {
   font-size: 2rem;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .modal .modal-content h3 {
+  main .sect .project .modal .modal-content h3 {
     font-size: 3rem;
   }
 }
-body main .sect .project .modal .modal-content h4 {
+main .sect .project .modal .modal-content h4 {
   font-size: 1.2rem;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .modal .modal-content h4 {
+  main .sect .project .modal .modal-content h4 {
     font-size: 1.5em;
   }
 }
-body main .sect .project .modal .modal-content h3,
-body main .sect .project .modal .modal-content h4,
-body main .sect .project .modal .modal-content p {
+main .sect .project .modal .modal-content h3,
+main .sect .project .modal .modal-content h4,
+main .sect .project .modal .modal-content p {
   color: black;
   margin-bottom: 5%;
 }
-body main .sect .project .modal .modal-content .modal-header {
+main .sect .project .modal .modal-content .modal-header {
   position: relative;
   width: 100%;
   margin-bottom: 100px;
 }
-body main .sect .project .modal .modal-content .modal-header img {
+main .sect .project .modal .modal-content .modal-header img {
   width: 100%;
 }
-body main .sect .project .modal .modal-content .modal-header .logo-h3 {
+main .sect .project .modal .modal-content .modal-header .logo-h3 {
   position: absolute;
   top: 30%;
   width: 50%;
 }
-body main .sect .project .modal .modal-content .modal-header .logo-h3 img {
+main .sect .project .modal .modal-content .modal-header .logo-h3 img {
   width: 100%;
   margin-bottom: 3%;
 }
-body main .sect .project .modal .modal-content .modal-header .logo-h3 .view {
+main .sect .project .modal .modal-content .modal-header .logo-h3 .view {
   display: flex;
   justify-content: center;
 }
-body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
+main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
   margin: 3%;
   padding: 2% 5%;
   color: black;
@@ -726,121 +728,121 @@ body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
   transition: all 0.5s;
 }
 @media screen and (min-width: 768px) {
-  body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
+  main .sect .project .modal .modal-content .modal-header .logo-h3 .view a {
     font-size: 18px;
   }
 }
-body main .sect .project .modal .modal-content .modal-header .logo-h3 .view a:hover {
+main .sect .project .modal .modal-content .modal-header .logo-h3 .view a:hover {
   background-color: black;
   color: white;
 }
-body main .sect .project .modal .modal-content .modal-main {
+main .sect .project .modal .modal-content .modal-main {
   position: relative;
   width: 100%;
 }
-body main .sect .project .modal .modal-content .modal-main img {
+main .sect .project .modal .modal-content .modal-main img {
   width: 100%;
 }
-body main .sect .project .modal .modal-content .modal-main section {
+main .sect .project .modal .modal-content .modal-main section {
   margin-bottom: 10%;
 }
-body main .sect .project .modal .modal-content .modal-main .pic {
+main .sect .project .modal .modal-content .modal-main .pic {
   margin-bottom: 5%;
 }
-body main .sect .project .modal .modal-content .modal-main .coor-main-font {
+main .sect .project .modal .modal-content .modal-main .coor-main-font {
   font-family: "Lato-Regular";
 }
-body main .sect .project .modal .modal-content .modal-main .coor-sub-font {
+main .sect .project .modal .modal-content .modal-main .coor-sub-font {
   font-family: "맑은 고딕";
 }
-body main .sect .project .modal .m1 {
+main .sect .project .modal .m1 {
   background-image: url(../img/modal/jujery/jujery-background.png);
 }
-body main .sect .project .modal .m1 .logo-h3 h3 {
+main .sect .project .modal .m1 .logo-h3 h3 {
   font-size: 40px;
   font-family: "SANGJU Gyeongcheon Island";
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .modal .m1 .logo-h3 h3 {
+  main .sect .project .modal .m1 .logo-h3 h3 {
     font-size: 100px;
   }
 }
-body main .sect .project .modal .m1 img {
+main .sect .project .modal .m1 img {
   margin-bottom: 5%;
 }
-body main .sect .project .modal .m1 p {
+main .sect .project .modal .m1 p {
   line-height: 2;
 }
-body main .sect .project .modal .m1 .concept-wrap img {
+main .sect .project .modal .m1 .concept-wrap img {
   margin-bottom: 5%;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .modal .m1 .concept-wrap img {
+  main .sect .project .modal .m1 .concept-wrap img {
     width: 80%;
   }
 }
-body main .sect .project .modal .m1 .font {
+main .sect .project .modal .m1 .font {
   width: 60%;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .modal .m1 .font {
+  main .sect .project .modal .m1 .font {
     width: 40%;
   }
 }
-body main .sect .project .modal .m1 .font .jujery-main-font {
+main .sect .project .modal .m1 .font .jujery-main-font {
   margin-bottom: 10%;
 }
-body main .sect .project .modal .m2 {
+main .sect .project .modal .m2 {
   background-color: #ccc;
 }
-body main .sect .project .modal .m2 img {
+main .sect .project .modal .m2 img {
   margin-bottom: 5%;
 }
-body main .sect .project .modal .m2 p {
+main .sect .project .modal .m2 p {
   line-height: 2;
 }
-body main .sect .project .modal .m2 .logo-h3 h3 {
+main .sect .project .modal .m2 .logo-h3 h3 {
   color: #fff;
   font-size: 50px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .modal .m2 .logo-h3 h3 {
+  main .sect .project .modal .m2 .logo-h3 h3 {
     font-size: 100px;
   }
 }
-body main .sect .project .modal .m2 .logo-h3 .view {
+main .sect .project .modal .m2 .logo-h3 .view {
   display: flex;
   width: 50%;
   color: #fff;
   flex-direction: column;
 }
-body main .sect .project .modal .m3 .logo-h3 h3 {
+main .sect .project .modal .m3 .logo-h3 h3 {
   font-size: 50px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .project .modal .m3 .logo-h3 h3 {
+  main .sect .project .modal .m3 .logo-h3 h3 {
     font-size: 100px;
   }
 }
-body main .sect .project .modal .m3 .video {
+main .sect .project .modal .m3 .video {
   width: 100%;
 }
-body main .sect .project .modal .m3 .video video {
+main .sect .project .modal .m3 .video video {
   width: 100%;
 }
-body main .sect .project .modal .modal-open {
+main .sect .project .modal .modal-open {
   overflow: hidden;
 }
-body main .sect .contact {
+main .sect .contact {
   position: relative;
   height: 600px;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .contact {
+  main .sect .contact {
     height: 90%;
   }
 }
-body main .sect .contact .conta {
+main .sect .contact .conta {
   display: flex;
   position: absolute;
   top: 50%;
@@ -850,15 +852,15 @@ body main .sect .contact .conta {
   transform: translate(-50%, -50%);
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .contact .conta {
+  main .sect .contact .conta {
     width: 100%;
   }
 }
-body main .sect .contact .card-pc {
+main .sect .contact .card-pc {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .contact .card-pc {
+  main .sect .contact .card-pc {
     display: block;
     position: relative;
     width: 700px;
@@ -870,8 +872,8 @@ body main .sect .contact .card-pc {
     background-color: #626262;
   }
 }
-body main .sect .contact .card-pc .before-flip,
-body main .sect .contact .card-pc .after-flip {
+main .sect .contact .card-pc .before-flip,
+main .sect .contact .card-pc .after-flip {
   display: flex;
   position: absolute;
   width: 100%;
@@ -880,33 +882,33 @@ body main .sect .contact .card-pc .after-flip {
   align-items: center;
   backface-visibility: hidden;
 }
-body main .sect .contact .card-pc .before-flip h4 {
+main .sect .contact .card-pc .before-flip h4 {
   font-size: 80px;
 }
-body main .sect .contact .card-pc .after-flip {
+main .sect .contact .card-pc .after-flip {
   padding: 35px;
   transform: rotateY(180deg);
 }
-body main .sect .contact .card-pc .after-flip .intro {
+main .sect .contact .card-pc .after-flip .intro {
   width: 60%;
 }
-body main .sect .contact .card-pc .after-flip .intro h4 {
+main .sect .contact .card-pc .after-flip .intro h4 {
   font-size: 70px;
   margin-bottom: 30px;
 }
-body main .sect .contact .card-pc .after-flip .intro p {
+main .sect .contact .card-pc .after-flip .intro p {
   font-size: 24px;
   color: #ccc;
 }
-body main .sect .contact .card-pc .after-flip .kakao {
+main .sect .contact .card-pc .after-flip .kakao {
   width: 40%;
   text-align: center;
 }
-body main .sect .contact .card-pc .after-flip .kakao img {
+main .sect .contact .card-pc .after-flip .kakao img {
   width: auto;
   height: 270px;
 }
-body main .sect .contact .card-mobile {
+main .sect .contact .card-mobile {
   position: relative;
   width: 300px;
   height: 150px;
@@ -914,11 +916,11 @@ body main .sect .contact .card-mobile {
   background-color: #626262;
 }
 @media screen and (min-width: 1024px) {
-  body main .sect .contact .card-mobile {
+  main .sect .contact .card-mobile {
     display: none;
   }
 }
-body main .sect .contact .card-mobile .after-flip {
+main .sect .contact .card-mobile .after-flip {
   display: flex;
   position: absolute;
   width: 100%;
@@ -926,47 +928,48 @@ body main .sect .contact .card-mobile .after-flip {
   justify-content: center;
   align-items: center;
 }
-body main .sect .contact .card-mobile .after-flip {
+main .sect .contact .card-mobile .after-flip {
   padding: 20px;
 }
-body main .sect .contact .card-mobile .after-flip .intro {
+main .sect .contact .card-mobile .after-flip .intro {
   width: 60%;
 }
-body main .sect .contact .card-mobile .after-flip .intro p {
+main .sect .contact .card-mobile .after-flip .intro p {
   font-size: 12px;
   color: #ccc;
 }
-body main .sect .contact .card-mobile .after-flip .intro h4 {
+main .sect .contact .card-mobile .after-flip .intro h4 {
   font-size: 30px;
 }
-body main .sect .contact .card-mobile .after-flip .kakao {
+main .sect .contact .card-mobile .after-flip .kakao {
   width: 40%;
   text-align: center;
 }
-body main .sect .contact .card-mobile .after-flip .kakao img {
+main .sect .contact .card-mobile .after-flip .kakao img {
   width: 100%;
   height: 100px;
 }
-body footer {
+
+footer {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
 @media screen and (min-width: 1024px) {
-  body footer {
+  footer {
     position: absolute;
     bottom: 0;
   }
 }
-body footer .copyright {
+footer .copyright {
   width: 95%;
   padding: 10px 0;
   font-size: 0.8rem;
   text-align: right;
 }
 @media screen and (min-width: 1024px) {
-  body footer .copyright {
+  footer .copyright {
     padding: 0;
     font-size: 1.1rem;
   }
@@ -974,4 +977,11 @@ body footer .copyright {
 
 .transition {
   transition: left 3s ease;
+}
+
+.added-style {
+  background-color: black;
+  color: white;
+  letter-spacing: 0.3em;
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */

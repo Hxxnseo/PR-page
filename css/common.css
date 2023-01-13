@@ -28,10 +28,6 @@
   font-family: "SANGJU Gyeongcheon Island";
   src: url(../font/modal/SANGJU\ Gyeongcheon\ Island.woff);
 }
-@font-face {
-  font-family: "NotoSerifKR-Regular";
-  src: url(../font/modal/NotoSerifKR-Regular.woff);
-}
 * {
   margin: 0;
   padding: 0;
@@ -40,8 +36,19 @@
 }
 
 body {
+  position: relative;
+  background-color: black;
+  color: white;
+  cursor: url(../img/cursor/circle-cursor.png), auto;
+  transition: cursor 13s ease-in-out;
+  transition-duration: 0.8s;
+  word-break: keep-all;
   font-size: 16px;
   font-family: "NanumSquareRound";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ul,

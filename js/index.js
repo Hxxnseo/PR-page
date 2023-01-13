@@ -196,12 +196,31 @@ function slide(size) {
 
 // 세 번째 섹션에서 랜덤으로 나타나는 공 구현
 const mainPoint = document.getElementById("mainPoint");
+let intervalPoint;
+let isBlack = true;
+
+setInterval(() => {
+  if (isBlack) {
+    mainPoint.style.color = "white";
+    mainPoint.style.letterSpacing = "0.3em";
+    mainPoint.style.backgroundColor = "black";
+    mainPoint.style.textAlign = "center";
+    mainPoint.style.border = "2px solid #ccc";
+    isBlack = false;
+  } else {
+    mainPoint.style.color = "black";
+    mainPoint.style.letterSpacing = "0.1em";
+    mainPoint.style.backgroundColor = "white";
+    mainPoint.style.textAlign = "center";
+
+    isBlack = true;
+  }
+}, 1500);
+
 const wrap = document.getElementById("wrap");
 const pointContent = ["#1. <br>COOR", "#2. <br>주저리", "#3. <br>Profile", "#4. <br> 피아노"];
 
-mainPoint.addEventListener("click", function () {
-  wrap.innerHTML = "";
-
+const createPoint = () => {
   const points = [];
 
   for (let i = 0; i < pointContent.length; i++) {
@@ -232,6 +251,14 @@ mainPoint.addEventListener("click", function () {
       openModal(i);
     });
   }
+};
+
+createPoint();
+
+mainPoint.addEventListener("click", function () {
+  wrap.innerHTML = "";
+
+  createPoint();
 });
 
 // 랜덤으로 나타나는 공을 클릭하면 모달창이 나오게 - mobile
