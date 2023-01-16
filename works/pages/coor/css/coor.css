@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+@font-face {
+  font-family: "Lato-Black";
+  src: url(../font/Lato-Black.woff);
+}
+
 .container {
   position: relative;
   width: 1200px;
