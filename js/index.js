@@ -136,7 +136,7 @@ function slide(size) {
   const $slideCont = document.querySelector(".slideCont");
   const $text = document.querySelectorAll(".skill");
 
-  const DURATION = 3000;
+  const DURATION = 5000;
   const WIDTH = size;
 
   let itemLength = $slideContain.children.length;
