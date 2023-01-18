@@ -74,7 +74,6 @@ body {
   transition: cursor 13s ease-in-out;
   transition-duration: 0.8s;
   word-break: keep-all;
-  overflow: hidden;
   font-size: 16px;
   font-family: "NanumSquareRound";
   -webkit-user-select: none;
@@ -120,6 +119,12 @@ h4 {
 p {
   font-size: 1em;
   line-height: 1.6;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
 }
 
 header {
@@ -513,9 +518,27 @@ main .sect .about .slide-para .para .skills {
 }
 main .sect .about .slide-para .para .learning {
   order: 1;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 1024px) {
   main .sect .about .slide-para .para .learning {
+    order: 2;
+  }
+}
+main .sect .about .slide-para .para .learning .deal {
+  order: 2;
+}
+@media screen and (min-width: 1024px) {
+  main .sect .about .slide-para .para .learning .deal {
+    order: 1;
+  }
+}
+main .sect .about .slide-para .para .learning .place {
+  order: 1;
+}
+@media screen and (min-width: 1024px) {
+  main .sect .about .slide-para .para .learning .place {
     order: 2;
   }
 }
