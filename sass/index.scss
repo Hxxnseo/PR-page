@@ -393,9 +393,27 @@ main {
 
           .learning {
             order: 1;
+            display: flex;
+            flex-direction: column;
 
             @include responsive(pc-screens) {
               order: 2;
+            }
+
+            .deal {
+              order: 2;
+
+              @include responsive(pc-screens) {
+                order: 1;
+              }
+            }
+
+            .place {
+              order: 1;
+
+              @include responsive(pc-screens) {
+                order: 2;
+              }
             }
           }
 
@@ -738,6 +756,25 @@ main {
         }
 
         .m3 {
+          .logo-h3 {
+            h3 {
+              font-size: 50px;
+              @include responsive(pc-screens) {
+                font-size: 100px;
+              }
+            }
+          }
+          .video {
+            width: 100%;
+
+            video {
+              width: 100%;
+            }
+          }
+        }
+
+        .m4 {
+          background-color: #f9f8ef;
           .logo-h3 {
             h3 {
               font-size: 50px;

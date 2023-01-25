@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script defer src="./js/index.js"></script>
+    <title>2048</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="modal">
+        <div id="modal-content">
+          <h1>타일들의 숫자를 더해서 2048을 만들어보세요!</h1>
+          <div id="tab">
+            <button id="tab-button">게임 이용 법</button>
+            <div id="tab-content">
+              <h4>
+                2048 하는 법: 타일을 움직이기 위해서 <b><i>키보드의 화살표</i></b
+                >를 누르세요! <br />
+                같은 숫자가 겹치게 된다면 두개의 숫자는 더해집니다. <br />숫자들을 다 더해서 2048을 완성해 보세요!
+              </h4>
+              <!-- <p>Content for tab</p> -->
+            </div>
+          </div>
+          <button id="start-button">Start</button>
+        </div>
+      </div>
+      <table border="1">
+        <caption>
+          2048
+        </caption>
+        <tr>
+          <td id="00"></td>
+          <td id="01"></td>
+          <td id="02"></td>
+          <td id="03"></td>
+        </tr>
+
+        <tr>
+          <td id="10"></td>
+          <td id="11"></td>
+          <td id="12"></td>
+          <td id="13"></td>
+        </tr>
+
+        <tr>
+          <td id="20"></td>
+          <td id="21"></td>
+          <td id="22"></td>
+          <td id="23"></td>
+        </tr>
+
+        <tr>
+          <td id="30"></td>
+          <td id="31"></td>
+          <td id="32"></td>
+          <td id="33"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -218,7 +218,7 @@ setInterval(() => {
 }, 1500);
 
 const wrap = document.getElementById("wrap");
-const pointContent = ["#1. <br>COOR", "#2. <br>주저리", "#3. <br>Profile", "#4. <br> 피아노"];
+const pointContent = ["#1. <br>COOR", "#2. <br>주저리", "#3. <br>Profile", "#4. <br> 피아노", "#5. <br> 2048"];
 
 const createPoint = () => {
   const points = [];
