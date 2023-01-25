@@ -947,6 +947,10 @@ main .sect .contact .card-pc .after-flip .kakao {
 main .sect .contact .card-pc .after-flip .kakao img {
   width: auto;
   height: 270px;
+  transition: all 0.5s;
+}
+main .sect .contact .card-pc .after-flip .kakao img:hover {
+  transform: scale(1.05);
 }
 main .sect .contact .card-mobile {
   position: relative;
