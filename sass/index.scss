@@ -2,7 +2,10 @@
 @import "./common.scss";
 @import "./mixin.scss";
 
-@include responsive(pc-screens) {
+body {
+  @include responsive(pc-screens) {
+    overflow: hidden;
+  }
 }
 
 header {
