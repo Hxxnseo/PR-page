@@ -95,7 +95,7 @@ if (windowWidth.matches) {
 
 // 첫 섹션에서 타자치는 것처럼 나오게
 const element = document.getElementById("introMe");
-const sentences = ["안녕하세요 꾸준히 공부하는 개발자 서현입니다.", "안녕하세요 더 나은 세상에 기여하고 싶은 개발자 서현입니다.", "안녕하세요 새로운 것에 주저하지 않고 도전하는 개발자 서현입니다."];
+const sentences = ["안녕하세요 새로운 것에 주저하지 않고 도전하는 개발자 서현입니다.", "안녕하세요 꾸준히 공부하는 개발자 서현입니다.", "안녕하세요 더 나은 세상에 기여하고 싶은 개발자 서현입니다."];
 let i = 0;
 
 console.log(element);
