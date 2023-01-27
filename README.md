@@ -18,7 +18,7 @@
 
 > - <img src="https://img.shields.io/badge/Photoshop-001834?style=for-the-badge&logo=Adobe Photoshop&logoColor=#00A9FF"> : 디자인, 레이아웃
 > - <img src="https://img.shields.io/badge/Visual Studio Code-58A6FF?style=for-the-badge&logo=Visual Studio Code&logoColor=#00A9FF"> : 개발 환경
-> - <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> , <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> , <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">  : 코드 구현
+> - <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">  : 코드 구현
 > - <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> : 프로젝트 버전 관리
 
 ## 느낀 점
