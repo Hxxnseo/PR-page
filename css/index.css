@@ -393,7 +393,8 @@ main .sect .home .scroll-down .mousey .scroller {
   }
 }
 @keyframes bounce {
-  from, to {
+  from,
+  to {
     margin-bottom: 0;
     animation-timing-function: ease-out;
   }
@@ -1028,4 +1029,4 @@ footer .copyright {
   color: white;
   letter-spacing: 0.3em;
   text-align: center;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */
