@@ -25,6 +25,11 @@ a {
   color: #333;
 }
 
+a:hover {
+  font-weight: 600;
+  color: #ccc;
+}
+
 strong {
   display: block;
 }
