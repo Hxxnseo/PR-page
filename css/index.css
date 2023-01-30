@@ -393,8 +393,7 @@ main .sect .home .scroll-down .mousey .scroller {
   }
 }
 @keyframes bounce {
-  from,
-  to {
+  from, to {
     margin-bottom: 0;
     animation-timing-function: ease-out;
   }
@@ -871,6 +870,27 @@ main .sect .project .modal .m4 .video {
 main .sect .project .modal .m4 .video video {
   width: 100%;
 }
+main .sect .project .modal .m5 {
+  background-color: #1f1f1f;
+}
+main .sect .project .modal .m5 h3,
+main .sect .project .modal .m5 p {
+  color: #ededed;
+}
+main .sect .project .modal .m5 .logo-h3 h3 {
+  font-size: 50px;
+}
+@media screen and (min-width: 1024px) {
+  main .sect .project .modal .m5 .logo-h3 h3 {
+    font-size: 100px;
+  }
+}
+main .sect .project .modal .m5 .video {
+  width: 100%;
+}
+main .sect .project .modal .m5 .video video {
+  width: 100%;
+}
 main .sect .project .modal .modal-open {
   overflow: hidden;
 }
@@ -1029,4 +1049,4 @@ footer .copyright {
   color: white;
   letter-spacing: 0.3em;
   text-align: center;
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

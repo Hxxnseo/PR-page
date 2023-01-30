@@ -795,6 +795,32 @@ main {
           }
         }
 
+        .m5 {
+          background-color: #1f1f1f;
+
+          h3,
+          p {
+            color: #ededed;
+          }
+
+          .logo-h3 {
+            h3 {
+              font-size: 50px;
+              @include responsive(pc-screens) {
+                font-size: 100px;
+              }
+            }
+          }
+
+          .video {
+            width: 100%;
+
+            video {
+              width: 100%;
+            }
+          }
+        }
+
         .modal-open {
           overflow: hidden;
         }
